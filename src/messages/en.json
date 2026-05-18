@@ -1,0 +1,72 @@
+{
+    "welcome": "Welcome to My App",
+    "description": "This is a simple Next.js app.",
+    "nameAuthor": "Nguyen Huu Phuoc",
+
+    "common": {
+        "home": "Home",
+        "profile": "Profile",
+        "projects": "Projects",
+        "skills": "Skills",
+        "education": "Education",
+        "experience": "Experience",
+        "contact": "Contact",
+        "languages": "Languages",
+        "readMore": "Read more",
+        "backToProfile": "Back to Profile"
+    },
+
+    "profile": {
+        "infomation":{
+            "role": "I'm a Software Engineer",
+            "location": "Ho Chi Minh City, Vietnam",
+            "yearsOfExperience": "3+ years of experience in software development",
+            "summary": "I am a full-stack software engineer with over 1+ year of experience, passionate about building impactful software solutions and always eager to learn new technologies.",
+            "currentWork": "Currently, I'm a Software Engineer at TeamSolutions VietNam",
+            "contact": {
+                "zalo": "https://zalo.me/0858179329",
+                "email": "huuphuoc@example.com",
+                "linkedin": "LinkedIn",
+                "github": "GitHub"
+            }
+        },
+        "hackathon": {
+            "introduction": "Introduction video",
+            "relatedArticles": "Related articles",
+            "title": "Global Hackathon 2024",
+            "description": "Participate in the hackathon and showcase your skills and creativity in building a language learning website within 48 hours."
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "A collection of my personal and collaborative projects, demonstrating my expertise and passion for development."
+        },
+        "skills": {
+            "title": "Skills",
+            "description": "A comprehensive list of my technical skills, including programming languages, frameworks, and tools."
+        },
+        "education": {
+            "title": "Education",
+            "description": "Details about my educational background, including degrees, institutions, and relevant coursework."
+        },
+        "experience": {
+            "title": "Experience",
+            "description": "An overview of my professional experience, including internships, jobs, and freelance work."
+        },
+        "contact": {
+            "title": "Contact Information",
+            "description": "Ways to get in touch with me, including email, social media, and other contact methods."
+        },
+        "languages": {
+            "title": "Languages",
+            "description": "A list of languages I speak, along with my proficiency levels."
+        }
+    },
+
+    "workExperience": {
+        "title": "Work Experience",
+        "company": "Company",
+        "duration": "Duration",
+        "description": "Key Responsibilities",
+        "technologies": "Technologies Used"
+    }
+}
