@@ -3,7 +3,7 @@ import en from "@/messages/en.json";
 import vi from "@/messages/vi.json";
 
 // --- Constants ---
-export const DEFAULT_LANG = "en" as const;
+export const DEFAULT_LANG = "vi" as const;
 export const LANG_MAP = {
   en,
   vi,
@@ -11,7 +11,7 @@ export const LANG_MAP = {
 
 export const supportedLangs = Object.keys(LANG_MAP) as (keyof typeof LANG_MAP)[];
 export type SupportedLang = keyof typeof LANG_MAP;
-export type Translations = typeof en;
+export type Translations = typeof vi;
 export type TFunction = (key: string) => string;
 
 // --- Deep Getter ---

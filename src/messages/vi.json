@@ -1,72 +1,26 @@
 {
-    "welcome": "Welcome to My App",
-    "description": "This is a simple Next.js app.",
-    "nameAuthor": "Nguyen Huu Phuoc",
+    "mainTitle":"We are getting married",
+    "description" : "Mời bạn cùng chúng tôi viết tiếp chương đẹp nhất của cuộc đời. Sự hiện diện của bạn là món quà vô giá dành cho chúng tôi.",
+    "sendMessages": "Gửi Lời Chúc",
+    "ourStory":{
+        "title": "Our Story",
+        "description": "Từ những người bạn chung trường, đến những người yêu, và giờ là bạn đời của nhau.",
 
-    "common": {
-        "home": "Trang chủ",
-        "profile": "Hồ sơ",
-        "projects": "Dự án",
-        "skills": "Kỹ năng",
-        "education": "Giáo dục",
-        "experience": "Kinh nghiệm",
-        "contact": "Liên hệ",
-        "languages": "Ngôn ngữ",
-        "readMore": "Đọc thêm",
-        "backToProfile": "Quay lại hồ sơ"
-    },
+        "story1": {
+            "title": "Câu chuyện của chúng tôi",
+            "content": "Chúng tôi gặp nhau vào một chiều mưa tháng 8. Linh đang loay hoay với chiếc ô bị hỏng, còn Vinh thì tình cờ đi ngang qua. Một câu chào ngại ngùng, một nụ cười trao nhau, và phần còn lại đã trở thành lịch sử.",
+            "subContent": "Trải qua gần một thập kỉ bên nhau, cùng nhau vượt qua bao thăng trầm, chúng tôi nhận ra mình không thể sống thiếu người kia. Ngày Vinh quỳ gối cầu hôn dưới bầu trời đầy sao, Linh biết rằng đây chính là bến đỗ bình yên nhất của đời mình."
+        },
 
-    "profile": {
-        "infomation": {
-            "role": "I'm a Software Engineer",
-            "location": "Hồ Chí Minh, Vietnam",
-            "yearsOfExperience": "Có hơn 3 năm kinh nghiệm trong phát triển phần mềm",
-            "summary": "Tôi là một kỹ sư phần mềm full-stack với hơn 1+ năm kinh nghiệm, đam mê xây dựng các giải pháp phần mềm có tác động mạnh mẽ và luôn sẵn sàng học hỏi các công nghệ mới.",
-            "currentWork": "Hiện tại, tôi là một Kỹ sư Phần mềm tại TeamSolutions Việt Nam",
-            "contact": {
-                "zalo": "https://zalo.me/0858179329",
-                "email": "huuphuoc@example.com",
-                "linkedin": "LinkedIn",
-                "github": "GitHub"
-            }
-        },
-        "hackathon": {
-            "introduction": "Video giới thiệu",
-            "relatedArticles": "Bài viết liên quan",
-            "title": "Global Hackathon 2024",
-            "description": "Tham gia cuộc thi hackathon, thể hiện kỹ năng và sự sáng tạo của bạn trong việc xây dựng một trang web học ngôn ngữ trong vòng 48 giờ."
-        },
-        "projects": {
-            "title": "Dự án",
-            "description": "A collection of my personal and collaborative projects, demonstrating my expertise and passion for development."
-        },
-        "skills": {
-            "title": "Kỹ năng",
-            "description": "A comprehensive list of my technical skills, including programming languages, frameworks, and tools."
-        },
-        "education": {
-            "title": "Giáo dục",
-            "description": "Details about my educational background, including degrees, institutions, and relevant coursework."
-        },
-        "experience": {
-            "title": "Kinh nghiệm",
-            "description": "An overview of my professional experience, including internships, jobs, and freelance work."
-        },
-        "contact": {
-            "title": "Thông tin liên hệ",
-            "description": "Các cách để liên lạc với tôi, bao gồm email, mạng xã hội và các phương thức liên lạc khác."
-        },
-        "languages": {
-            "title": "Ngôn ngữ",
-            "description": "Danh sách các ngôn ngữ tôi biết, cùng với trình độ thành thạo của từng ngôn ngữ."
+        "story2": {
+            "title": "Chuyện Chưa Kể",
+            "content": "Mẹ Linh từng kể, vào một buổi chiều nọ, có một thanh niên cưỡi chiếc Sirius \"cà tàng\"  cứ lượn lờ, đánh võng mấy vòng trước cổng. Mẹ thấy khả nghi quá mới quay sang hỏi: ",
+            "subContent": "Ủa Linh, thằng nào đi chiếc Sirius, da thì ngăm ngăm, tóc thì xoăn tít như mì tôm mà cứ dòm ngó nhà mình như đi đòi nợ vậy con?",
+            "subContent2": "Nghe xong, Linh bĩu môi chê ỏng chê eo, dõng dạc tuyên bố: ",
+            "subContent3": "À, cái thằng Vinh học cùng trường đó mẹ. Trông cái mặt ghét dễ sợ, có cho vàng con cũng không thèm!",
+            "subContent4": ". Thế nhưng Linh đâu biết rằng, thanh niên \"tóc xoăn đòi nợ\" hôm ấy lượn lờ với mục đích vô cùng rõ ràng: cưa đổ bằng được con gái cưng của mẹ.",
+            "subContent5": "Đúng là ông bà ta nói cấm có sai: \"Ghét của nào  trời trao của đó\". Mà ở đây là trời ép nhận luôn nguyên combo \"đen đen, xoăn xoăn\" cộng thêm chiếc Sirius!"
         }
-    },
-
-    "workExperience": {
-        "title": "Kinh nghiệm làm việc",
-        "company": "Công ty",
-        "duration": "Thời gian",
-        "description": "Trách nhiệm chính",
-        "technologies": "Công nghệ được sử dụng"
     }
+    
 }

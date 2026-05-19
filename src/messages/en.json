@@ -1,72 +1,25 @@
 {
-    "welcome": "Welcome to My App",
-    "description": "This is a simple Next.js app.",
-    "nameAuthor": "Nguyen Huu Phuoc",
+    "mainTitle": "We are getting married",
+    "description": "Join us in writing the most beautiful chapter of our lives. Your presence is the most precious gift we could ever receive.",
+    "sendMessages": "Send Messages",
+    "ourStory": {
+        "title": "Our Story",
+        "description": "From being classmates, to being lovers, and now inseparable partners.",
 
-    "common": {
-        "home": "Home",
-        "profile": "Profile",
-        "projects": "Projects",
-        "skills": "Skills",
-        "education": "Education",
-        "experience": "Experience",
-        "contact": "Contact",
-        "languages": "Languages",
-        "readMore": "Read more",
-        "backToProfile": "Back to Profile"
-    },
+        "story1": {
+            "title": "Our Story",
+            "content": "We met on a rainy afternoon in August. Linh was struggling with her broken umbrella, while Vinh happened to pass by. A hesitant greeting, a smile exchanged, and the rest became history.",
+            "subContent": "We have gone through nearly a decade together, facing countless ups and downs. We realized we cannot live without each other. On the day Vinh knelt down to propose under the starry sky, Linh knew this was the most peaceful harbor of her life."
+        },
 
-    "profile": {
-        "infomation":{
-            "role": "I'm a Software Engineer",
-            "location": "Ho Chi Minh City, Vietnam",
-            "yearsOfExperience": "3+ years of experience in software development",
-            "summary": "I am a full-stack software engineer with over 1+ year of experience, passionate about building impactful software solutions and always eager to learn new technologies.",
-            "currentWork": "Currently, I'm a Software Engineer at TeamSolutions VietNam",
-            "contact": {
-                "zalo": "https://zalo.me/0858179329",
-                "email": "huuphuoc@example.com",
-                "linkedin": "LinkedIn",
-                "github": "GitHub"
-            }
-        },
-        "hackathon": {
-            "introduction": "Introduction video",
-            "relatedArticles": "Related articles",
-            "title": "Global Hackathon 2024",
-            "description": "Participate in the hackathon and showcase your skills and creativity in building a language learning website within 48 hours."
-        },
-        "projects": {
-            "title": "Projects",
-            "description": "A collection of my personal and collaborative projects, demonstrating my expertise and passion for development."
-        },
-        "skills": {
-            "title": "Skills",
-            "description": "A comprehensive list of my technical skills, including programming languages, frameworks, and tools."
-        },
-        "education": {
-            "title": "Education",
-            "description": "Details about my educational background, including degrees, institutions, and relevant coursework."
-        },
-        "experience": {
-            "title": "Experience",
-            "description": "An overview of my professional experience, including internships, jobs, and freelance work."
-        },
-        "contact": {
-            "title": "Contact Information",
-            "description": "Ways to get in touch with me, including email, social media, and other contact methods."
-        },
-        "languages": {
-            "title": "Languages",
-            "description": "A list of languages I speak, along with my proficiency levels."
+        "story2": {
+            "title": "The Untold Story",
+            "content": "Linh's mother once told a story about a young man riding a \"cà tàng\" Sirius, wandering around the gate for several laps. Mother found it suspicious and turned to ask: ",
+            "subContent": "Hey Linh, which guy is riding that Sirius, with dark skin, curly hair like instant noodles, always peering at our house like he's collecting debts?",
+            "subContent2": "After hearing this, Linh pouted and complained: ",
+            "subContent3": "Oh, that guy named Vinh from our school. He looks so hateful, even if you give him gold, he won't take it!",
+            "subContent4": ". But Linh didn't know that the young man \"curly-haired debt collector\" that day was wandering around with a very clear purpose: to win over his beloved daughter.",
+            "subContent5": "As our grandparents said, \"What you hate is what heaven gives you.\" And here it was heaven forcing us to accept the whole package of \"dark skin, curly hair\" plus that Sirius!"
         }
-    },
-
-    "workExperience": {
-        "title": "Work Experience",
-        "company": "Company",
-        "duration": "Duration",
-        "description": "Key Responsibilities",
-        "technologies": "Technologies Used"
     }
 }

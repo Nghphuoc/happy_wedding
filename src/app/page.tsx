@@ -6,7 +6,6 @@ import Events from "@/components/Events";
 import Dresscode from "@/components/Dresscode";
 import Gallery from "@/components/Gallery";
 import BridalParty from "@/components/BridalParty";
-import RSVP from "@/components/RSVP";
 import Footer from "@/components/Footer";
 
 export default function WeddingPage() {
@@ -20,7 +19,6 @@ export default function WeddingPage() {
             <Dresscode />
             <Gallery />
             <BridalParty />
-            <RSVP />
             <Footer />
         </div>
     );
