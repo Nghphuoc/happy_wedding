@@ -1,12 +1,12 @@
 "use client";
 import { useTranslation } from "@/contexts/TranslationContext";
+import SendBlessing from "@/feature/SendBlessing";
 import Image from "next/image";
 import { useState } from "react";
-import RSVPModal from "./RSVP";
 
 const Hero = () => {
     const { t } = useTranslation();
-    const [isRSVPOpen, setIsRSVPOpen] = useState(false)
+    const [isSendBlessingOpen, setIsSendBlessingOpen] = useState(false)
 
     return (
         <>
@@ -26,7 +26,7 @@ const Hero = () => {
                         {t("description")}
                     </p>
                     <button
-                        onClick={() => setIsRSVPOpen(true)}
+                        onClick={() => setIsSendBlessingOpen(true)}
                         className="bg-[#52594a] text-white px-8 py-3 uppercase tracking-widest text-sm hover:bg-[#3a4034] transition-colors"
                     >
                         {t("sendMessages")}
@@ -65,9 +65,9 @@ const Hero = () => {
                 </div>
             </section>
 
-            <RSVPModal
-                isOpen={isRSVPOpen}
-                onClose={() => setIsRSVPOpen(false)}
+            <SendBlessing
+                isOpen={isSendBlessingOpen}
+                onClose={() => setIsSendBlessingOpen(false)}
             />
         </>
     );

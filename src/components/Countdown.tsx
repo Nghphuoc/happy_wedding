@@ -13,6 +13,7 @@ interface TimeLeft {
 }
 
 const Countdown = () => {
+    // TODO: Cần chỉnh lại ngày giờ cho đúng với ngày cưới của mình nhé
     const targetDate = new Date("2026-10-25T00:00:00");
     const calculateTimeLeft = (): TimeLeft => {
         const now = new Date();

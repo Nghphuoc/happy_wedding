@@ -8,6 +8,7 @@ import {
 } from "@/libs/i18n-core";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { ThemeProvider } from "@/libs/ThemeProvider";
+import Providers from "@/providers/Provider";
 
 export default async function RootLayout({
     children,
@@ -20,21 +21,23 @@ export default async function RootLayout({
     return (
         <html lang={lang} suppressHydrationWarning>
             <body>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    <div className="bg-background text-foreground">
-                        <TranslationProvider
-                            lang={lang}
-                            translations={translations}
-                        >
-                            {children}
-                        </TranslationProvider>
-                    </div>
-                </ThemeProvider>
+                <Providers>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        <div className="bg-background text-foreground">
+                            <TranslationProvider
+                                lang={lang}
+                                translations={translations}
+                            >
+                                {children}
+                            </TranslationProvider>
+                        </div>
+                    </ThemeProvider>
+                </Providers>
             </body>
         </html>
     );

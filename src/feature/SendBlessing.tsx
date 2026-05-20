@@ -1,69 +1,42 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useSendBlessing } from "@/hooks/useSendBlessing"; // Nhớ sửa đường dẫn nếu cần
 
-interface RSVPModalProps {
+interface SendBlessingProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
-const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [isSuccess, setIsSuccess] = useState<boolean>(false);
-    const [codeError, setCodeError] = useState<string | null>(null);
+const SendBlessing: React.FC<SendBlessingProps> = ({ isOpen, onClose }) => {
     const [statusVal, setStatusVal] = useState<string>("");
+    const formRef = useRef<HTMLFormElement>(null);
 
-    const GOOGLE_SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycbwsQp8MIawhWBZarYMDlyCTHp-4WDqpopoN2HvkQkiNm_JykXAnOR4tmCGki5rJa95JDQ/exec";
+    // Gọi custom hook
+    const sendBlessingMutation = useSendBlessing();
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsLoading(true);
-        setCodeError(null);
-        setIsSuccess(false);
 
-        const form = e.currentTarget;
-        const formData = new FormData(form);
+        if (!formRef.current) return;
+        const formData = new FormData(formRef.current);
 
+        // Xử lý data nếu không tham dự
         if (statusVal === "Rất tiếc không thể đến") {
             formData.set("QUANTITY_ATTENDING", "");
         }
 
-        const searchParams = new URLSearchParams();
-        formData.forEach((value, key) => {
-            searchParams.append(key, value as string);
-        });
-
-        try {
-            const response = await fetch(GOOGLE_SCRIPT_URL, {
-                method: "POST",
-                body: searchParams,
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-            });
-
-            const result = await response.json();
-
-            if (result.status === "invalid_code") {
-                setCodeError(result.message);
-            } else if (result.status === "success") {
-                setIsSuccess(true);
-                form.reset();
+        sendBlessingMutation.mutate(formData, {
+            onSuccess: () => {
+                formRef.current?.reset();
                 setStatusVal("");
+
                 setTimeout(() => {
-                    setIsSuccess(false);
+                    sendBlessingMutation.reset();
                     onClose();
                 }, 3000);
-            } else {
-                alert("Hệ thống trục trặc: " + result.message);
-            }
-        } catch (error) {
-            console.error("Lỗi kết nối API:", error);
-            alert("Không thể kết nối đến hệ thống. Vui lòng thử lại sau!");
-        } finally {
-            setIsLoading(false);
-        }
+            },
+        });
     };
 
     const isNotAttending = statusVal === "Rất tiếc không thể đến";
@@ -113,7 +86,11 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form
+                    ref={formRef}
+                    onSubmit={handleSubmit}
+                    className="space-y-8"
+                >
                     {/* Hàng 1: Mã lời mời */}
                     <div className="relative group">
                         <input
@@ -123,7 +100,7 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
                             className="w-full border-b-2 border-gray-200 bg-transparent py-3 px-1 text-gray-800 focus:outline-none focus:border-[#52594a] transition-colors uppercase placeholder:normal-case placeholder:text-gray-400"
                             required
                         />
-                        {codeError && (
+                        {sendBlessingMutation.isError && (
                             <p className="text-red-500 text-sm mt-2 font-medium flex items-center gap-1">
                                 <svg
                                     className="w-4 h-4"
@@ -138,7 +115,7 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
                                         d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                     />
                                 </svg>
-                                {codeError}
+                                {sendBlessingMutation.error.message}
                             </p>
                         )}
                     </div>
@@ -247,7 +224,6 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
                         </div>
                     </div>
 
-                    {/* Hàng 3: Lời nhắn */}
                     <div className="relative group">
                         <textarea
                             name="NOTE"
@@ -258,14 +234,15 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
                         ></textarea>
                     </div>
 
-                    {/* Nút Submit */}
                     <div className="text-center pt-6">
                         <button
                             type="submit"
-                            disabled={isLoading}
+                            disabled={
+                                sendBlessingMutation.isPending || sendBlessingMutation.isSuccess
+                            }
                             className="bg-[#52594a] text-white px-12 py-4 rounded-full uppercase tracking-[0.15em] text-sm font-medium hover:bg-[#3a4034] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-lg w-full md:w-auto"
                         >
-                            {isLoading ? (
+                            {sendBlessingMutation.isPending ? (
                                 <span className="flex items-center justify-center gap-2">
                                     <svg
                                         className="animate-spin h-4 w-4 text-white"
@@ -294,8 +271,7 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
                         </button>
                     </div>
 
-                    {/* Thông báo thành công */}
-                    {isSuccess && (
+                    {sendBlessingMutation.isSuccess && (
                         <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-2xl text-center animate-fade-in-up">
                             <p className="text-green-700 font-medium flex items-center justify-center gap-2">
                                 🎉 Cảm ơn bạn! Phản hồi đã được ghi nhận.
@@ -308,4 +284,4 @@ const RSVPModal: React.FC<RSVPModalProps> = ({ isOpen, onClose }) => {
     );
 };
 
-export default RSVPModal;
+export default SendBlessing;
