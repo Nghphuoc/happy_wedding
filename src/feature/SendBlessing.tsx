@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { useSendBlessing } from "@/hooks/useSendBlessing"; // Nhớ sửa đường dẫn nếu cần
+import { useSendBlessing } from "@/hooks/useSendBlessing";
 
 interface SendBlessingProps {
     isOpen: boolean;
