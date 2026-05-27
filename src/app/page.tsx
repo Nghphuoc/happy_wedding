@@ -16,9 +16,9 @@ export default function WeddingPage() {
             <Countdown />
             <Story />
             <Events />
-            <Dresscode />
             <Gallery />
             <BridalParty />
+            <Dresscode />
             <Footer />
         </div>
     );

@@ -34,14 +34,26 @@ const Countdown = () => {
     };
 
     const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        const mountTimer = window.setTimeout(() => {
+            setIsMounted(true);
+        }, 0);
+
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
 
-        return () => clearInterval(timer);
+        return () => {
+            clearTimeout(mountTimer);
+            clearInterval(timer);
+        };
     }, []);
+
+    if (!isMounted) {
+        return null;
+    }
 
     return (
         <section className="py-8 md:py-12 lg:py-16 bg-[#fcf9f3] flex justify-center items-center overflow-hidden">
@@ -79,7 +91,6 @@ const Countdown = () => {
                 </div>
 
                 <div className="flex flex-col items-center lg:items-start w-full lg:w-auto">
-                    {/* Tên cô dâu chú rể */}
                     <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-10 text-center lg:text-left">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#4a3f3a]">
                             Quang Vinh{" "}
@@ -91,7 +102,6 @@ const Countdown = () => {
                     </div>
 
                     <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-4 lg:gap-6 w-full max-w-[450px] lg:max-w-none">
-                        {/* Cụm Days */}
                         <div className="flex flex-col items-center w-14 sm:w-16">
                             <span className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#6b4a45] mb-1 lg:mb-2">
                                 {timeLeft.days.toString().padStart(2, "0")}
@@ -101,7 +111,6 @@ const Countdown = () => {
                             </span>
                         </div>
 
-                        {/* Divider Rose */}
                         <div className="relative w-4 h-8 sm:w-6 sm:h-10 lg:w-8 lg:h-12">
                             <Image
                                 src={Rose}
@@ -111,7 +120,6 @@ const Countdown = () => {
                             />
                         </div>
 
-                        {/* Cụm Hours */}
                         <div className="flex flex-col items-center w-14 sm:w-16">
                             <span className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#6b4a45] mb-1 lg:mb-2">
                                 {timeLeft.hours.toString().padStart(2, "0")}
@@ -121,7 +129,6 @@ const Countdown = () => {
                             </span>
                         </div>
 
-                        {/* Divider Rose */}
                         <div className="relative w-4 h-8 sm:w-6 sm:h-10 lg:w-8 lg:h-12">
                             <Image
                                 src={Rose}
@@ -131,7 +138,6 @@ const Countdown = () => {
                             />
                         </div>
 
-                        {/* Cụm Minutes */}
                         <div className="flex flex-col items-center w-14 sm:w-16">
                             <span className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#6b4a45] mb-1 lg:mb-2">
                                 {timeLeft.minutes.toString().padStart(2, "0")}
@@ -141,7 +147,6 @@ const Countdown = () => {
                             </span>
                         </div>
 
-                        {/* Divider Rose */}
                         <div className="relative w-4 h-8 sm:w-6 sm:h-10 lg:w-8 lg:h-12">
                             <Image
                                 src={Rose}
@@ -151,7 +156,6 @@ const Countdown = () => {
                             />
                         </div>
 
-                        {/* Cụm Seconds */}
                         <div className="flex flex-col items-center w-14 sm:w-16">
                             <span className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#6b4a45] mb-1 lg:mb-2">
                                 {timeLeft.seconds.toString().padStart(2, "0")}
