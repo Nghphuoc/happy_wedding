@@ -22,13 +22,7 @@ export default async function RootLayout({
         <html lang={lang} suppressHydrationWarning>
             <body>
                 <Providers>
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="system"
-                        enableSystem
-                        disableTransitionOnChange
-                    >
-                        <div className="bg-background text-foreground">
+                        <div className="bg-background text-foreground w-full min-h-screen">
                             <TranslationProvider
                                 lang={lang}
                                 translations={translations}
@@ -36,7 +30,6 @@ export default async function RootLayout({
                                 {children}
                             </TranslationProvider>
                         </div>
-                    </ThemeProvider>
                 </Providers>
             </body>
         </html>
