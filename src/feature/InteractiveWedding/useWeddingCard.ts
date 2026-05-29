@@ -1,20 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 
-/**
- * Quản lý toàn bộ state & side-effects của modal thiệp cưới.
- * Component chỉ cần gọi hook này — không có logic nào rải rác trong JSX.
- */
 export function useWeddingCard(isOpen: boolean, onClose: () => void) {
     const [step, setStep] = useState(0);
 
-    // Reset về bìa mỗi lần modal mở lại
     useEffect(() => {
         if (!isOpen) return;
         const id = requestAnimationFrame(() => setStep(0));
         return () => cancelAnimationFrame(id);
     }, [isOpen]);
 
-    // Đóng khi bấm Escape
     useEffect(() => {
         if (!isOpen) return;
         const handler = (e: KeyboardEvent) => {
@@ -24,7 +18,6 @@ export function useWeddingCard(isOpen: boolean, onClose: () => void) {
         return () => window.removeEventListener("keydown", handler);
     }, [isOpen, onClose]);
 
-    // Khoá scroll body
     useEffect(() => {
         document.body.style.overflow = isOpen ? "hidden" : "";
         return () => {

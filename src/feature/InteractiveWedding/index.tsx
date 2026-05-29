@@ -11,11 +11,13 @@ import { CARD_WIDTH_BY_STEP } from "./wedding.config";
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
+    name?: string;
 }
 
 export default function InteractiveWeddingCard({
     isOpen,
     onClose,
+    name
 }: ModalProps) {
     const { step, advance } = useWeddingCard(isOpen, onClose);
 
@@ -28,10 +30,9 @@ export default function InteractiveWeddingCard({
 
     return (
         <div
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/65 backdrop-blur-sm p-3 sm:p-4 md:p-6 overflow-y-auto"
+            className="fixed inset-0 z-200 flex items-center justify-center bg-black/65 backdrop-blur-sm p-3 sm:p-4 md:p-6 overflow-y-auto"
             onClick={onClose}
         >
-            {/* Card — chiều rộng animate theo step */}
             <div
                 onClick={(e) => {
                     e.stopPropagation();
@@ -40,21 +41,19 @@ export default function InteractiveWeddingCard({
                 className={[
                     "relative my-auto cursor-pointer select-none",
                     "bg-[#580d1c] rounded-md shadow-[0_24px_60px_rgba(0,0,0,0.45)]",
-                    "transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]",
+                    "transition-all duration-700 ease-in-out",
                     CARD_WIDTH_BY_STEP[step],
                 ].join(" ")}
             >
                 <TextureOverlay src={stuccoBg.src} opacity="opacity-40" />
 
-                {/* Bìa ngoài */}
                 <CardCover textureSrc={stuccoBg.src} visible={step === 0} />
 
-                {/* Ruột thiệp */}
                 <div
                     className={`p-2.5 sm:p-3.5 md:p-4 transition-opacity duration-700 ${step === 0 ? "opacity-0" : "opacity-100"}`}
                 >
                     <div className="flex flex-col md:flex-row w-full bg-[#fdfbf7] shadow-[inset_0_0_15px_rgba(0,0,0,0.08)] overflow-hidden rounded-sm">
-                        <CardMain showHint={step === 1} />
+                        <CardMain showHint={step === 1} name={name}/>
                         <CardDetails
                             visible={step === 2}
                             onClose={handleClose}

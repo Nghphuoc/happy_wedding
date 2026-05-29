@@ -20,11 +20,11 @@ const WishCard: React.FC<WishCardProps> = ({ data }) => {
             onClick={() => setIsOpen(!isOpen)}
         >
             <div
-                className={`relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform ${
-                    isOpen ? "[transform:rotateY(180deg)]" : ""
+                className={`relative w-full h-full duration-700 transform-3d transition-transform ${
+                    isOpen ? "transform-[rotateY(180deg)]" : ""
                 }`}
             >
-                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center p-6 group-hover:shadow-md transition-shadow">
+                <div className="absolute inset-0 w-full h-full backface-hidden bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center p-6 group-hover:shadow-md transition-shadow">
                     <div className="w-16 h-16 bg-[#f4f5f2] rounded-full flex items-center justify-center mb-4 text-[#52594a]">
                         <svg
                             className="w-8 h-8"
@@ -57,7 +57,7 @@ const WishCard: React.FC<WishCardProps> = ({ data }) => {
                     </span>
                 </div>
 
-                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#52594a] text-white rounded-2xl shadow-lg flex flex-col p-6">
+                <div className="absolute inset-0 w-full h-full backface-hidden transform-[rotateY(180deg)] bg-[#52594a] text-white rounded-2xl shadow-lg flex flex-col p-6">
                     <div className="flex-1 overflow-y-auto scrollbar-hide">
                         <svg
                             className="w-6 h-6 text-white/30 mb-2"

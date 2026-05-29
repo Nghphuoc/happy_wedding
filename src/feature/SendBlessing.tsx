@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import { useSendBlessing } from "@/hooks/useSendBlessing";
+import { useSearchParams } from "next/navigation";
 
 interface SendBlessingProps {
     isOpen: boolean;
@@ -9,10 +10,11 @@ interface SendBlessingProps {
 }
 
 const SendBlessing: React.FC<SendBlessingProps> = ({ isOpen, onClose }) => {
+    const searchParams = useSearchParams();
+    const codeFromUrl = searchParams.get("code");
     const [statusVal, setStatusVal] = useState<string>("");
     const formRef = useRef<HTMLFormElement>(null);
 
-    // Gọi custom hook
     const sendBlessingMutation = useSendBlessing();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -99,6 +101,8 @@ const SendBlessing: React.FC<SendBlessingProps> = ({ isOpen, onClose }) => {
                             placeholder="Mã lời mời in trên thiệp của bạn *"
                             className="w-full border-b-2 border-gray-200 bg-transparent py-3 px-1 text-gray-800 focus:outline-none focus:border-[#52594a] transition-colors uppercase placeholder:normal-case placeholder:text-gray-400"
                             required
+                            defaultValue={codeFromUrl || ""}
+                            readOnly={!!codeFromUrl}
                         />
                         {sendBlessingMutation.isError && (
                             <p className="text-red-500 text-sm mt-2 font-medium flex items-center gap-1">
@@ -238,7 +242,8 @@ const SendBlessing: React.FC<SendBlessingProps> = ({ isOpen, onClose }) => {
                         <button
                             type="submit"
                             disabled={
-                                sendBlessingMutation.isPending || sendBlessingMutation.isSuccess
+                                sendBlessingMutation.isPending ||
+                                sendBlessingMutation.isSuccess
                             }
                             className="bg-[#52594a] text-white px-12 py-4 rounded-full uppercase tracking-[0.15em] text-sm font-medium hover:bg-[#3a4034] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-lg w-full md:w-auto"
                         >

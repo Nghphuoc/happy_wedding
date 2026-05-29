@@ -6,11 +6,16 @@ import { WEDDING } from "./wedding.config";
 const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
-export function CardMain({ showHint }: { showHint: boolean }) {
+type CardMainProps = {
+    showHint: boolean;
+    name?: string;
+};
+
+export function CardMain({ showHint, name }: CardMainProps) {
     const { groomName, brideName, date, venue, address } = WEDDING;
 
     return (
-        <div className="w-full md:w-[420px] lg:w-[460px] flex-shrink-0 flex flex-col items-center justify-center px-5 sm:px-8 py-10 sm:py-12 text-center relative z-10">
+        <div className="w-full md:w-105 lg:w-115 shrink-0 flex flex-col items-center justify-center px-5 sm:px-8 py-10 sm:py-12 text-center relative z-10">
             <h3
                 className={`text-[clamp(2rem,7vw,2.8rem)] text-[#dca54c] mb-5 ${greatVibes.className}`}
             >
@@ -24,7 +29,7 @@ export function CardMain({ showHint }: { showHint: boolean }) {
                     Trân trọng kính mời
                 </p>
                 <p className="text-sm sm:text-base font-medium border-b border-dashed border-[#5a101d]/30 pb-1 w-3/4 mx-auto mb-1">
-                    Khách quý
+                    {name || "Quý Khách"}
                 </p>
                 <p className="text-[11px] sm:text-xs mb-1">
                     Đến dự buổi tiệc chung vui cùng gia đình chúng tôi

@@ -14,7 +14,7 @@ interface TimeLeft {
 
 const Countdown = () => {
     // TODO: Cần chỉnh lại ngày giờ cho đúng với ngày cưới của mình nhé
-    const targetDate = new Date("2026-10-25T00:00:00");
+    const targetDate = new Date("2026-10-04T00:00:00");
     const calculateTimeLeft = (): TimeLeft => {
         const now = new Date();
         const difference = targetDate.getTime() - now.getTime();
@@ -58,7 +58,7 @@ const Countdown = () => {
     return (
         <section className="py-8 md:py-12 lg:py-16 bg-[#fcf9f3] flex justify-center items-center overflow-hidden">
             <div className="max-w-6xl w-full px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-24">
-                <div className="relative flex justify-center items-center w-[260px] h-[300px] sm:w-[300px] sm:h-[350px] lg:w-[340px] lg:h-[400px]">
+                <div className="relative flex justify-center items-center w-65 h-75 sm:w-75 sm:h-87.5 lg:w-85 lg:h-100">
                     <div className="absolute inset-0 z-0">
                         <svg
                             viewBox="0 0 100 115"
@@ -73,7 +73,7 @@ const Countdown = () => {
                     </div>
 
                     <div
-                        className="relative z-10 w-[220px] h-[260px] sm:w-[260px] sm:h-[300px] lg:w-[290px] lg:h-[340px]"
+                        className="relative z-10 w-55 h-65 sm:w-65 sm:h-75 lg:w-72.5 lg:h-85"
                         style={{
                             clipPath:
                                 "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
@@ -101,7 +101,7 @@ const Countdown = () => {
                         </h2>
                     </div>
 
-                    <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-4 lg:gap-6 w-full max-w-[450px] lg:max-w-none">
+                    <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-4 lg:gap-6 w-full max-w-112.5 lg:max-w-none">
                         <div className="flex flex-col items-center w-14 sm:w-16">
                             <span className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#6b4a45] mb-1 lg:mb-2">
                                 {timeLeft.days.toString().padStart(2, "0")}

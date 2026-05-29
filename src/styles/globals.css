@@ -32,3 +32,14 @@
 ::selection {
   background-color: rgba(168, 85, 247, 0.3);
 }
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

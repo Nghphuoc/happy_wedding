@@ -13,22 +13,19 @@ export function CardDetails({ visible, onClose }: CardDetailsProps) {
     return (
         <div
             className={[
-                "flex-shrink-0 relative overflow-hidden",
+                "shrink-0 relative overflow-hidden",
                 "bg-[#f9f7f2] border-t md:border-t-0 md:border-l border-dashed border-[#721527]/20",
-                "transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]",
-                // Mobile: animate chiều cao
-                visible ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0",
-                // Desktop: animate chiều rộng (override max-h)
+                "transition-all duration-700 ease-in-out",
+                visible ? "max-h-200 opacity-100" : "max-h-0 opacity-0",
                 "md:max-h-none",
                 visible
-                    ? "md:w-[420px] lg:w-[460px] md:opacity-100"
+                    ? "md:w-105 lg:w-115 md:opacity-100"
                     : "md:w-0 md:opacity-0",
             ].join(" ")}
         >
-            {/* Đổ bóng cạnh trái (desktop) */}
-            <div className="hidden md:block absolute left-0 top-0 w-5 h-full bg-gradient-to-r from-black/[0.04] to-transparent pointer-events-none z-10" />
+            <div className="hidden md:block absolute left-0 top-0 w-5 h-full bg-linear-to-r from-black/4 to-transparent pointer-events-none z-10" />
 
-            <div className="flex flex-col items-center justify-center gap-7 sm:gap-8 px-6 sm:px-8 py-10 sm:py-12 text-[#5a101d] w-full md:w-[420px] lg:w-[460px]">
+            <div className="flex flex-col items-center justify-center gap-7 sm:gap-8 px-6 sm:px-8 py-10 sm:py-12 text-[#5a101d] w-full md:w-105 lg:w-115">
                 <DressCode colors={dressCodeColors as unknown as string[]} />
                 <Timeline
                     items={
@@ -96,7 +93,7 @@ function Timeline({ items }: { items: { time: string; label: string }[] }) {
 
 function QRSection() {
     return (
-        <div className="text-center bg-white p-4 rounded-md shadow-sm border border-[#721527]/10 w-full max-w-[220px]">
+        <div className="text-center bg-white p-4 rounded-md shadow-sm border border-[#721527]/10 w-full max-w-55">
             <SectionHeading icon={QrCode} label="Gửi Lời Chúc" />
             <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gray-100 mx-auto my-2 flex items-center justify-center text-[9px] text-gray-400 rounded-sm">
                 [Mã QR]

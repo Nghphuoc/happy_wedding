@@ -1,33 +1,70 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import InteractiveWeddingCard from "@/feature/InteractiveWedding/index"; 
+import InteractiveWeddingCard from "@/feature/InteractiveWedding/index";
+import { useSearchParams } from "next/navigation";
+import { API_KEY } from "@/constants/constants";
 
 const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Story", href: "#story" },
     { name: "Gallery", href: "#gallery" },
     { name: "Events", href: "#events" },
-    { name: "Invitation card", href: "#" }, // Menu sẽ mở Modal
+    { name: "Invitation card", href: "#" },
     { name: "Blessings", href: "/blessings" },
 ];
 
-const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isCardOpen, setIsCardOpen] = useState(false); // State quản lý việc mở Modal Thiệp
+interface infoUserResult {
+    status: string;
+    data?: {
+        NAME: string;
+        QUANTITY_ATTENDING: string;
+        NICK_NAME: string;
+        STATUS: string;
+        DATE: string;
+        CODE: string;
+        CHECK: string;
+        NOTE: string;
+    };
+}
 
-    // Hàm xử lý khi click vào bất kỳ Link nào trên Navbar
+const Navbar = () => {
+    const searchParams = useSearchParams();
+    const codeFromUrl = searchParams.get("code");
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isCardOpen, setIsCardOpen] = useState(false);
+    const [result, setResult] = useState<infoUserResult>({ status: "pending" });
+
     const handleNavClick = (
         e: React.MouseEvent<HTMLAnchorElement>,
         linkName: string,
     ) => {
         if (linkName === "Invitation card") {
-            e.preventDefault(); // Chặn việc đổi URL
-            setIsCardOpen(true); // Mở thiệp lên
+            e.preventDefault();
+            setIsCardOpen(true);
         }
-        setIsMenuOpen(false); // Bấm xong thì đóng luôn cái menu mobile nếu nó đang mở
+        setIsMenuOpen(false);
     };
+
+    useEffect(() => {
+        if (codeFromUrl) {
+            const fetchData = async () => {
+                try {
+                    const response = await fetch(
+                        `${API_KEY.GOOGLE_SCRIPT_URL}?code=${codeFromUrl}`,
+                    );
+                    const data = await response.json();
+                    setResult(data);
+                    setIsCardOpen(true);
+                } catch (error) {
+                    console.error("Lỗi fetch API:", error);
+                }
+            };
+
+            fetchData();
+        }
+    }, [codeFromUrl]);
 
     return (
         <>
@@ -47,7 +84,6 @@ const Navbar = () => {
                         </button>
                     </div>
 
-                    {/* 2. Desktop Left Links */}
                     <div className="hidden md:flex flex-1 justify-start space-x-8 text-sm uppercase tracking-widest text-gray-600">
                         {navLinks.slice(0, 3).map((link) => (
                             <a
@@ -61,12 +97,10 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* 3. LOGO */}
                     <div className="text-2xl md:text-3xl font-serif italic text-[#52594a] text-center shrink-0 px-8">
                         VINH & LINH
                     </div>
 
-                    {/* 4. Desktop Right Links */}
                     <div className="hidden md:flex flex-1 justify-end space-x-8 text-sm uppercase tracking-widest text-gray-600">
                         {navLinks.slice(3).map((link) => (
                             <a
@@ -80,15 +114,13 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Spacer cho Mobile */}
                     <div className="md:hidden flex-1"></div>
                 </nav>
 
-                {/* 5. Mobile Dropdown Menu */}
                 <div
                     className={`md:hidden absolute top-full left-0 w-full bg-[#fbf9f4] shadow-lg transition-all duration-300 ease-in-out border-t border-gray-200/50 ${
                         isMenuOpen
-                            ? "max-h-[400px] opacity-100 py-6"
+                            ? "max-h-100 opacity-100 py-6"
                             : "max-h-0 opacity-0 overflow-hidden py-0"
                     }`}
                 >
@@ -110,7 +142,10 @@ const Navbar = () => {
             {/* NHÚNG MODAL THIỆP CƯỚI VÀO ĐÂY */}
             <InteractiveWeddingCard
                 isOpen={isCardOpen}
-                onClose={() => setIsCardOpen(false)}
+                onClose={() => {
+                    setIsCardOpen(false);
+                }}
+                name={result.data?.NAME}
             />
         </>
     );

@@ -19,7 +19,7 @@ export function CardCover({ textureSrc, visible }: CardCoverProps) {
             className={[
                 "absolute inset-0 z-50 bg-[#4d0917] rounded-md",
                 "flex flex-col items-center justify-center",
-                "transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]",
+                "transition-all duration-700 ease-in-out",
                 visible
                     ? "opacity-100 pointer-events-auto"
                     : "opacity-0 scale-[1.04] pointer-events-none",
