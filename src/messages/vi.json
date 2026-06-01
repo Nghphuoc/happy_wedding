@@ -1,9 +1,9 @@
 {
-    "mainTitle":"We are getting married",
-    "description" : "Mời bạn cùng chúng tôi viết tiếp chương đẹp nhất của cuộc đời. Sự hiện diện của bạn là món quà vô giá dành cho chúng tôi.",
+    "mainTitle": "Chúng tôi chuẩn bị kết hôn",
+    "description": "Mời bạn cùng chúng tôi viết tiếp chương đẹp nhất của cuộc đời. Sự hiện diện của bạn là món quà vô giá dành cho chúng tôi.",
     "sendMessages": "Gửi Lời Chúc",
-    "ourStory":{
-        "title": "Our Story",
+    "ourStory": {
+        "title": "Câu chuyện của chúng tôi",
         "description": "Từ những người bạn chung trường, đến những người yêu, và giờ là bạn đời của nhau.",
 
         "story1": {
@@ -21,6 +21,35 @@
             "subContent4": ". Thế nhưng Linh đâu biết rằng, thanh niên \"tóc xoăn đòi nợ\" hôm ấy lượn lờ với mục đích vô cùng rõ ràng: cưa đổ bằng được con gái cưng của mẹ.",
             "subContent5": "Đúng là ông bà ta nói cấm có sai: \"Ghét của nào  trời trao của đó\". Mà ở đây là trời ép nhận luôn nguyên combo \"đen đen, xoăn xoăn\" cộng thêm chiếc Sirius!"
         }
+    },
+
+    "navigation": {
+        "home": "Trang chủ",
+        "Story": "Câu chuyện",
+        "Gallery": "Thư viện ảnh",
+        "Events": "Sự kiện",
+        "Invitation card": "Thiệp mời",
+        "Blessings": "Lời chúc"
+    },
+
+    "events": {
+        "title": "Sự kiện & Lễ cưới",
+        "Photography": {
+            "title": "Chụp ảnh cưới",
+            "description": "Chụp hình cưới lưu giữ những khoảnh khắc đáng nhớ và tạo ra những kỷ niệm vĩnh cửu cho cặp đôi."
+        },
+        "Ceremony": {
+            "title": "Lễ cưới",
+            "description": "Nghi thức cưới tuyên thề nơi cặp đôi trao lời thề hôn nhân và cam kết bên nhau trước sự chứng kiến của gia đình và bạn bè."
+        },
+        "Drink & Dinner": {
+            "title": "Tiệc cưới",
+            "description": "Bữa tiệc mừng hạnh phúc của cặp đôi, nơi gia đình và bạn bè tụ họp để chia sẻ niềm vui và chúc phúc cho đôi uyên ương."
+        }
+    },
+
+    "Memories & Moments": {
+        "title": "Memories & Moments",
+        "description": "Một bộ sưu tập những kỷ niệm quý giá và những khoảnh khắc không thể quên từ hành trình của chúng tôi."
     }
-    
 }

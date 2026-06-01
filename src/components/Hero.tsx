@@ -32,7 +32,7 @@ const Hero = () => {
                         {t("sendMessages")}
                     </button>
                 </div>
-                <div className="grid grid-cols-2 gap-4 h-[600px]">
+                <div className="grid grid-cols-2 gap-4 h-150">
                     <div className="h-full overflow-hidden rounded-t-full relative">
                         <Image
                             src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"

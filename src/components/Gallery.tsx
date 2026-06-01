@@ -1,15 +1,19 @@
+"use client";
+import { useTranslation } from "@/contexts/TranslationContext";
+
 /* eslint-disable @next/next/no-img-element */
 const Gallery = () => {
-    // Dùng <img> thường cho Gallery để dễ config layout thay vì component <Image /> của Next (bắt buộc fill hoặc width/height fixed)
+    const { t } = useTranslation();
+    
     return (
         <section id="gallery" className="py-24 bg-[#fbf9f4]">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-serif text-[#2c3127] mb-4">
-                        Memories & Moments
+                        {t("Memories & Moments.title")}
                     </h2>
                     <p className="text-gray-500">
-                        Những khoảnh khắc tuyệt vời nhất
+                        {t("Memories & Moments.description")}
                     </p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

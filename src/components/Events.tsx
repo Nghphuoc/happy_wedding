@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import { Heart, Wine, Camera, Sparkles } from "lucide-react";
 import Frame from "@/assets/frame.png";
+import { useTranslation } from "@/contexts/TranslationContext";
 
 const playfair = Playfair_Display({
     subsets: ["latin"],
@@ -58,34 +59,32 @@ function ScrollReveal({ children, delay = 0 }: ScrollRevealProps) {
     );
 }
 
-const services = [
-    {
-        title: "Photography",
-        description:
-            "Chụp hình cưới lưu giữ những khoảnh khắc đáng nhớ và tạo ra những kỷ niệm vĩnh cửu cho cặp đôi.",
-        icon: Camera,
-    },
-    {
-        title: "Ceremony",
-        description:
-            "Nghi thức cưới tuyên thề nơi cặp đôi trao lời thề hôn nhân và cam kết bên nhau trước sự chứng kiến của gia đình và bạn bè.",
-        icon: Heart,
-    },
-    {
-        title: "Drink & Dinner",
-        description:
-            "Một bữa tiệc cưới là một sự kiện vui vẻ để kết nối và thưởng thức cùng nhau, tạo nên những kỷ niệm đáng nhớ cho cặp đôi.",
-        icon: Wine,
-    },
-    {
-        title: "Ceremony",
-        description:
-            "Lễ cưới là một sự kiện chính thức nhằm tôn vinh sự kết hợp của hai cá nhân trong hôn nhân. Nó thường bao gồm các nghi thức truyền thống, lời thề hôn nhân và sự chứng kiến của gia đình và bạn bè.",
-        icon: Sparkles,
-    },
-];
-
 export default function Events() {
+    const { t } = useTranslation();
+
+    const services = [
+        {
+            title: t("events.Photography.title"),
+            description: t("events.Photography.description"),
+            icon: Camera,
+        },
+        {
+            title: t("events.Ceremony.title"),
+            description: t("events.Ceremony.description"),
+            icon: Heart,
+        },
+        {
+            title: t("events.Drink & Dinner.title"),
+            description: t("events.Drink & Dinner.description"),
+            icon: Wine,
+        },
+        {
+            title: t("events.Ceremony.title"),
+            description: t("events.Ceremony.description"),
+            icon: Sparkles,
+        },
+    ];
+
     return (
         <section
             id="events"
@@ -95,16 +94,14 @@ export default function Events() {
                 <h3
                     className={`text-center text-3xl md:text-4xl font-medium text-[#596157] mb-12 lg:mb-16 ${playfair.className}`}
                 >
-                    Events & Services
+                    {t("events.title")}
                 </h3>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     <div className="flex justify-center">
                         <ScrollReveal>
-                            <div className="relative w-[300px] h-[360px] sm:w-[400px] sm:h-[480px] lg:w-[480px] lg:h-[580px]">
-                                <div
-                                    className="absolute top-1/2 left-[58.33%] transform -translate-x-1/2 -translate-y-1/2 w-[75%] h-[93%] rounded-full overflow-hidden"
-                                >
+                            <div className="relative w-75 h-90 sm:w-100 sm:h-120 lg:w-120 lg:h-145">
+                                <div className="absolute top-1/2 left-[58.33%] transform -translate-x-1/2 -translate-y-1/2 w-[75%] h-[93%] rounded-full overflow-hidden">
                                     <Image
                                         src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=80"
                                         alt="Wedding Couple"

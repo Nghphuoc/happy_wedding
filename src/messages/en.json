@@ -21,5 +21,35 @@
             "subContent4": ". But Linh didn't know that the young man \"curly-haired debt collector\" that day was wandering around with a very clear purpose: to win over his beloved daughter.",
             "subContent5": "As our grandparents said, \"What you hate is what heaven gives you.\" And here it was heaven forcing us to accept the whole package of \"dark skin, curly hair\" plus that Sirius!"
         }
+    },
+
+    "navigation": {
+        "home": "Home",
+        "Story": "Story",
+        "Gallery": "Gallery",
+        "Events": "Events",
+        "Invitation card": "Invitation card",
+        "Blessings": "Blessings"
+    },
+
+    "events": {
+        "title": "Wedding & Events",
+        "Photography": {
+            "title": "Wedding Photography",
+            "description": "Capture the most precious moments of your special day and create timeless memories for you and your loved ones."
+        },
+        "Ceremony": {
+            "title": "Ceremony",
+            "description": "The wedding ceremony is a formal event that celebrates the union of two people in marriage. It typically includes traditional rituals, vows, and the witnessing of family and friends."
+        },
+        "Drink & Dinner": {
+            "title": "Drink & Dinner",
+            "description": "A delightful evening of drinks and dinner, bringing family and friends together to celebrate the happy couple."
+        }
+    },
+
+    "Memories & Moments": {
+        "title": "Memories & Moments",
+        "description": "A collection of cherished memories and unforgettable moments from our journey together."
     }
 }
