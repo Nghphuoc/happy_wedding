@@ -4,32 +4,18 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import InteractiveWeddingCard from "@/feature/InteractiveWedding/index";
 import { useSearchParams } from "next/navigation";
-import { API_KEY } from "@/constants/constants";
 import LanguageSwitcher from "@/feature/LanguageSwicher";
 import { useTranslation } from "@/contexts/TranslationContext";
-
-interface infoUserResult {
-    status: string;
-    data?: {
-        NAME: string;
-        QUANTITY_ATTENDING: string;
-        NICK_NAME: string;
-        STATUS: string;
-        DATE: string;
-        CODE: string;
-        CHECK: string;
-        NOTE: string;
-    };
-}
+import useGetInfo from "@/hooks/useGetInfo";
 
 const Navbar = () => {
     const searchParams = useSearchParams();
     const codeFromUrl = searchParams.get("code");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCardOpen, setIsCardOpen] = useState(false);
-    const [result, setResult] = useState<infoUserResult>({ status: "pending" });
     const { lang } = useTranslation();
     const { t } = useTranslation();
+    const { userInfo, fetchUserInfo } = useGetInfo(codeFromUrl || "");
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
@@ -73,20 +59,7 @@ const Navbar = () => {
 
     useEffect(() => {
         if (codeFromUrl) {
-            const fetchData = async () => {
-                try {
-                    const response = await fetch(
-                        `${API_KEY.GOOGLE_SCRIPT_URL}?code=${codeFromUrl}`,
-                    );
-                    const data = await response.json();
-                    setResult(data);
-                    setIsCardOpen(true);
-                } catch (error) {
-                    console.error("Lỗi fetch API:", error);
-                }
-            };
-
-            fetchData();
+            fetchUserInfo();
         }
     }, [codeFromUrl]);
 
@@ -176,7 +149,7 @@ const Navbar = () => {
             <InteractiveWeddingCard
                 isOpen={isCardOpen}
                 onClose={() => setIsCardOpen(false)}
-                name={result.data?.NAME}
+                name={userInfo?.data?.NAME}
             />
         </>
     );

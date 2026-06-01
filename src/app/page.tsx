@@ -7,6 +7,8 @@ import Dresscode from "@/components/Dresscode";
 import Gallery from "@/components/Gallery";
 import BridalParty from "@/components/BridalParty";
 import Footer from "@/components/Footer";
+import FloatingInvitation from "@/components/FloatingInvitation";
+
 
 export default function WeddingPage() {
     return (
@@ -20,6 +22,7 @@ export default function WeddingPage() {
             <BridalParty />
             <Dresscode />
             <Footer />
+            <FloatingInvitation />
         </div>
     );
 }
