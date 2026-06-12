@@ -12,12 +12,14 @@ interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
     name?: string;
+    checkLocation?: boolean;
 }
 
 export default function InteractiveWeddingCard({
     isOpen,
     onClose,
-    name
+    name,
+    checkLocation,
 }: ModalProps) {
     const { step, advance } = useWeddingCard(isOpen, onClose);
 
@@ -47,13 +49,13 @@ export default function InteractiveWeddingCard({
             >
                 <TextureOverlay src={stuccoBg.src} opacity="opacity-40" />
 
-                <CardCover textureSrc={stuccoBg.src} visible={step === 0} />
+                <CardCover textureSrc={stuccoBg.src} visible={step === 0} checkLocation={checkLocation} />
 
                 <div
                     className={`p-2.5 sm:p-3.5 md:p-4 transition-opacity duration-700 ${step === 0 ? "opacity-0" : "opacity-100"}`}
                 >
                     <div className="flex flex-col md:flex-row w-full bg-[#fdfbf7] shadow-[inset_0_0_15px_rgba(0,0,0,0.08)] overflow-hidden rounded-sm">
-                        <CardMain showHint={step === 1} name={name}/>
+                        <CardMain showHint={step === 1} name={name} checkLocation={checkLocation}/>
                         <CardDetails
                             visible={step === 2}
                             onClose={handleClose}

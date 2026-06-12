@@ -14,11 +14,12 @@ const FloatingInvitation = () => {
     const codeFromUrl = searchParams.get("code");
     const { userInfo, fetchUserInfo } = useGetInfo(codeFromUrl || "");
     const {t} = useTranslation();
-    
+
     useEffect(() => {
         if (codeFromUrl) {
             fetchUserInfo();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [codeFromUrl]);
 
     const handleOpenCard = () => {
@@ -58,6 +59,7 @@ const FloatingInvitation = () => {
                 isOpen={isCardOpen}
                 onClose={() => setIsCardOpen(false)}
                 name={userInfo?.data?.NAME || "Khách mời"}
+                checkLocation={userInfo?.data?.CHECK}
             />
         </>
     );

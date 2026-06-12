@@ -9,10 +9,11 @@ const playfair = Playfair_Display({ subsets: ["latin"] });
 interface CardCoverProps {
     textureSrc: string;
     visible: boolean;
+    checkLocation?: boolean;
 }
 
-export function CardCover({ textureSrc, visible }: CardCoverProps) {
-    const { groomName, brideName, date } = WEDDING;
+export function CardCover({ textureSrc, visible, checkLocation }: CardCoverProps) {
+    const { groomName, brideName, date_female, date_male } = WEDDING;
 
     return (
         <div
@@ -48,7 +49,7 @@ export function CardCover({ textureSrc, visible }: CardCoverProps) {
             <p
                 className={`relative z-10 text-[clamp(0.75rem,2.5vw,1rem)] uppercase tracking-[0.3em] text-[#dca54c]/70 mt-2 ${playfair.className}`}
             >
-                {date.day} . {date.month} . {date.year}
+                {checkLocation ? date_male.day : date_female.day} . {checkLocation ? date_male.month : date_female.month} . {checkLocation ? date_male.year : date_female.year}
             </p>
 
             <div className="absolute z-10 bottom-6 w-full flex flex-col items-center gap-1.5 text-[#dca54c] animate-pulse">

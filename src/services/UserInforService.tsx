@@ -9,7 +9,7 @@ export interface infoUserResult {
         STATUS: string;
         DATE: string;
         CODE: string;
-        CHECK: string;
+        CHECK: boolean;
         NOTE: string;
     };
 }

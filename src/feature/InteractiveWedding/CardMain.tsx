@@ -9,10 +9,11 @@ const playfair = Playfair_Display({ subsets: ["latin"] });
 type CardMainProps = {
     showHint: boolean;
     name?: string;
+    checkLocation?: boolean;
 };
 
-export function CardMain({ showHint, name }: CardMainProps) {
-    const { groomName, brideName, date, venue, address } = WEDDING;
+export function CardMain({ showHint, name, checkLocation }: CardMainProps) {
+    const { groomName, brideName, date_male, date_female, venue, address_male, address_female } = WEDDING;
 
     return (
         <div className="w-full md:w-105 lg:w-115 shrink-0 flex flex-col items-center justify-center px-5 sm:px-8 py-10 sm:py-12 text-center relative z-10">
@@ -46,11 +47,15 @@ export function CardMain({ showHint, name }: CardMainProps) {
                 <GoldDivider className="mx-auto my-2.5" />
 
                 <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-                    {date.weekday}
+                    {checkLocation ? date_male.weekday : date_female.weekday}
                 </p>
 
                 <div className="flex items-center justify-center gap-3 sm:gap-4 text-[#721527] my-1.5">
-                    {[date.day, date.month, date.year].map((part, i) => (
+                    {(
+                        checkLocation 
+                            ? [date_male.day, date_male.month, date_male.year]
+                            : [date_female.day, date_female.month, date_female.year]
+                    ).map((part, i) => (
                         <span
                             key={i}
                             className="flex items-center gap-3 sm:gap-4"
@@ -65,9 +70,11 @@ export function CardMain({ showHint, name }: CardMainProps) {
                     ))}
                 </div>
 
-                <p className="text-xs sm:text-sm mt-2 font-medium">{venue}</p>
-                <p className="text-[10px] sm:text-[11px] text-[#8c7462]">
-                    {address}
+                <p className={`text-xs sm:text-sm mt-2 font-medium ${playfair.className}`}>
+                    {venue}
+                </p>
+                <p className="text-[10px] sm:text-[12px] text-[#8c7462] font-medium">
+                    {checkLocation ? address_male : address_female}
                 </p>
             </div>
 

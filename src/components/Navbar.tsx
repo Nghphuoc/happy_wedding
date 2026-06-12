@@ -61,6 +61,7 @@ const Navbar = () => {
         if (codeFromUrl) {
             fetchUserInfo();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [codeFromUrl]);
 
     return (
@@ -150,6 +151,7 @@ const Navbar = () => {
                 isOpen={isCardOpen}
                 onClose={() => setIsCardOpen(false)}
                 name={userInfo?.data?.NAME}
+                checkLocation={userInfo?.data?.CHECK}
             />
         </>
     );
