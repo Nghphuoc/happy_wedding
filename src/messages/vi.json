@@ -21,6 +21,11 @@
             "subContent3": "À, cái thằng Vinh học cùng trường đó mẹ. Trông cái mặt ghét dễ sợ, có cho vàng con cũng không thèm!",
             "subContent4": ". Thế nhưng Linh đâu biết rằng, thanh niên \"tóc xoăn đòi nợ\" hôm ấy lượn lờ với mục đích vô cùng rõ ràng: cưa đổ bằng được con gái cưng của mẹ.",
             "subContent5": "Đúng là ông bà ta nói cấm có sai: \"Ghét của nào  trời trao của đó\". Mà ở đây là trời ép nhận luôn nguyên combo \"đen đen, xoăn xoăn\" cộng thêm chiếc Sirius!"
+        },
+
+        "card": {
+            "title": " \"Bên nhau\" là nơi chúng mình yêu thích nhất.",
+            "content": "Mỗi chương của cuộc đời đều trở nên đẹp đẽ hơn khi được viết cùng nhau."
         }
     },
 
@@ -49,8 +54,8 @@
         }
     },
 
-    "Memories & Moments": {
-        "title": "Memories & Moments",
+    "Moments": {
+        "title": "Kỷ niệm & Khoảnh khắc",
         "description": "Một bộ sưu tập những kỷ niệm quý giá và những khoảnh khắc không thể quên từ hành trình của chúng tôi."
     }
 }
