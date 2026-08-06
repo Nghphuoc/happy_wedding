@@ -1,86 +1,119 @@
 "use client";
 
-import React, { useState } from "react";
+import { CalendarDays, Heart, Quote } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 
 export interface WishInfo {
-    name: string;
-    note: string;
+  name: string;
+  note: string;
+  date: string;
 }
 
 interface WishCardProps {
-    data: WishInfo;
+  data: WishInfo;
+  index?: number;
 }
 
-const WishCard: React.FC<WishCardProps> = ({ data }) => {
-    const [isOpen, setIsOpen] = useState(false);
+const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 
-    return (
-        <div
-            className="relative w-full h-64 cursor-pointer perspective-[1000px] group"
-            onClick={() => setIsOpen(!isOpen)}
-        >
-            <div
-                className={`relative w-full h-full duration-700 transform-3d transition-transform ${
-                    isOpen ? "transform-[rotateY(180deg)]" : ""
-                }`}
-            >
-                <div className="absolute inset-0 w-full h-full backface-hidden bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center p-6 group-hover:shadow-md transition-shadow">
-                    <div className="w-16 h-16 bg-[#f4f5f2] rounded-full flex items-center justify-center mb-4 text-[#52594a]">
-                        <svg
-                            className="w-8 h-8"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                        </svg>
-                    </div>
+const formatWishDate = (date: string) => {
+  if (!date) return "";
 
-                    <h3 className="text-xl font-serif text-[#2c3127] text-center line-clamp-2">
-                        {data.name}
-                    </h3>
+  const parsedDate = new Date(date);
 
-                    <span className="mt-4 text-xs uppercase tracking-widest text-gray-400 flex items-center gap-1 animate-pulse">
-                        Click để mở
-                        <svg
-                            className="w-3 h-3"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"
-                            />
-                        </svg>
-                    </span>
-                </div>
+  if (Number.isNaN(parsedDate.getTime())) {
+    return date;
+  }
 
-                <div className="absolute inset-0 w-full h-full backface-hidden transform-[rotateY(180deg)] bg-[#52594a] text-white rounded-2xl shadow-lg flex flex-col p-6">
-                    <div className="flex-1 overflow-y-auto scrollbar-hide">
-                        <svg
-                            className="w-6 h-6 text-white/30 mb-2"
-                            fill="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                        </svg>
+  return new Intl.DateTimeFormat("vi-VN", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).format(parsedDate);
+};
 
-                        <p className="text-sm md:text-base leading-relaxed italic text-white/90">
-                            &quot;{data.note}&quot;
-                        </p>
-                    </div>
+const WishCard = ({ data, index = 0 }: WishCardProps) => {
+  const reduceMotion = useReducedMotion();
 
-                    <div className="mt-4 pt-4 border-t border-white/20 text-right">
-                        <span className="text-sm font-semibold text-white/80">
-                            - {data.name}
-                        </span>
-                    </div>
-                </div>
-            </div>
+  return (
+    <motion.article
+      initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{
+        duration: 0.65,
+        delay: Math.min(index * 0.06, 0.3),
+        ease: EASE_OUT,
+      }}
+      whileHover={
+        reduceMotion
+          ? undefined
+          : {
+              y: -8,
+              rotate: index % 2 === 0 ? 0.35 : -0.35,
+            }
+      }
+      className="group relative mb-6 break-inside-avoid overflow-hidden rounded-[1.75rem] border border-[#dca54c]/30 bg-[#fffaf2]/95 p-6 shadow-[0_18px_50px_rgba(114,21,39,0.08)] backdrop-blur transition-[border-color,box-shadow] duration-500 hover:border-[#dca54c]/65 hover:shadow-[0_28px_75px_rgba(114,21,39,0.16)] sm:p-7"
+    >
+      <div
+        aria-hidden="true"
+        className="absolute -right-10 -top-10 size-32 rounded-full border border-[#dca54c]/15 transition-transform duration-700 group-hover:scale-110"
+      />
+
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-14 -left-14 size-36 rounded-full bg-[#721527]/5 blur-2xl"
+      />
+
+      <Quote
+        aria-hidden="true"
+        strokeWidth={1.4}
+        className="mb-5 size-9 fill-[#dca54c]/10 text-[#dca54c]/55 transition duration-500 group-hover:scale-110 group-hover:text-[#dca54c]"
+      />
+
+      <p className="relative z-10 whitespace-pre-line text-sm leading-7 text-[#665455] sm:text-base sm:leading-8">
+        “{data.note}”
+      </p>
+
+      <div
+        aria-hidden="true"
+        className="my-6 h-px w-full bg-linear-to-r from-transparent via-[#dca54c]/35 to-transparent"
+      />
+
+      <footer className="relative z-10 flex items-end justify-between gap-4">
+        <div className="min-w-0">
+          <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#9a671d]">
+            Lời chúc từ
+          </p>
+
+          <div className="flex items-center gap-2">
+            <Heart
+              aria-hidden="true"
+              className="size-4 shrink-0 fill-[#721527]/10 text-[#721527]"
+            />
+
+            <h3 className="truncate font-serif text-lg font-semibold text-[#721527] sm:text-xl">
+              {data.name}
+            </h3>
+          </div>
         </div>
-    );
+
+        {data.date && (
+          <time
+            dateTime={data.date}
+            className="flex shrink-0 items-center gap-1.5 text-[11px] font-medium text-[#927d80] sm:text-xs"
+          >
+            <CalendarDays
+              aria-hidden="true"
+              className="size-3.5 text-[#9a671d]"
+            />
+
+            {formatWishDate(data.date)}
+          </time>
+        )}
+      </footer>
+    </motion.article>
+  );
 };
 
 export default WishCard;

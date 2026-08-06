@@ -45,7 +45,7 @@ const Navbar = () => {
             action: () => setIsMenuOpen(false),
         },
         {
-            name: t("navigation.Invitation card"),
+            name: t("navigation.Invitationcard"),
             href: "#",
             action: (e: React.MouseEvent<HTMLAnchorElement>) =>
                 handleNavClick(e),
@@ -60,6 +60,9 @@ const Navbar = () => {
     useEffect(() => {
         if (codeFromUrl) {
             fetchUserInfo();
+            if (userInfo) {
+                setTimeout(() => {setIsCardOpen(true);}, 5000);
+            }
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [codeFromUrl]);

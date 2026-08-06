@@ -5,7 +5,6 @@ import Story from "@/components/Story";
 import Events from "@/components/Events";
 import Dresscode from "@/components/Dresscode";
 import Gallery from "@/components/Gallery";
-import Footer from "@/components/Footer";
 import FloatingInvitation from "@/components/FloatingInvitation";
 
 
@@ -19,7 +18,6 @@ export default function WeddingPage() {
             <Events />
             <Gallery />
             <Dresscode />
-            <Footer />
             <FloatingInvitation />
         </div>
     );
