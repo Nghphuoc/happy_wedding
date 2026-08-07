@@ -10,7 +10,9 @@
         "story1": {
             "title": "Our Story",
             "content": "We met in high school during a math tutoring class. At first, we both just intended to “solve for x,” but the moment Vinh laid eyes on Linh, he found the “answer to his life.” ",
-            "subContent": "From two students once stumped by equations, we have navigated life’s many “tough problems” together. After a decade, Vinh decided to provide the final answer with a marriage proposal. Linh said yes, for after all those years, both understood: \nMath might be wrong, but choosing each other is undeniably right.\n"
+            "subContent": "From two students once stumped by equations, we have navigated life’s many “tough problems” together. After a decade, Vinh decided to provide the final answer with a marriage proposal. Linh said yes, for after all those years, both understood: ",
+            "highlight": "\nMath might be wrong, but choosing each other is undeniably right.\n"
+
         },
 
         "story2": {
