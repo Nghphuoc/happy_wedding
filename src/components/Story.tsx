@@ -50,6 +50,7 @@ const Story = () => {
             title={t("ourStory.story1.title")}
             content={t("ourStory.story1.content")}
             subContent={t("ourStory.story1.subContent")}
+            highlight={t("ourStory.story1.highlight")}
             titleCard={t("ourStory.card.title")}
             contentCard={t("ourStory.card.content")}
           />

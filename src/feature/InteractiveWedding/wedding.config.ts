@@ -1,17 +1,17 @@
 export const WEDDING = {
     groomName: "Quang Vinh",
     brideName: "Diem Linh",
-    date_female: { day: "04", month: "10", year: "2026", weekday: "Chủ Nhật" },
-    date_male: { day: "05", month: "10", year: "2026", weekday: "Thứ Hai" },
-    venue: "Tiệc Cưới Được Tổ Chức Tại Tư Gia",
-    address_male: "Số 218-A, Kinh 10A, Tân Hiệp, Kiên Giang.",
-    address_female: "Số 123, Kinh A, Tân Hiệp, Kiên Giang.", // TODO
+    date_female: { day: "03", month: "10", year: "2026", weekday: "Thứ Bảy" },
+    date_male: { day: "04", month: "10", year: "2026", weekday: "Chủ Nhật" },
+    venue: "Tiệc Cưới Sẽ Được Tổ Chức Tại Tự Gia",
+    address_male: "Số 318-A, Kinh 10A, Tân Hiệp, An Giang.",
+    address_female: "Số 185, Kinh A2, Tân Phát B, Tân Hội, An Giang.",
     timeline: [
+        { time: "9:00", label: "Lễ Cưới" },
         { time: "10:30", label: "Đón khách" },
-        { time: "11:00", label: "Cử hành hôn lễ" },
-        { time: "11:30", label: "Khai tiệc" },
+        { time: "11:00", label: "Tiệc Trưa" },
     ],
-    dressCodeColors: ["#721527", "#dca54c", "#2b2b2b", "#fdfbf7"],
+    nuptialMass: { time: "9:00", location: "Thánh Đường Giáo Xứ KITO VUA Kênh A2", date: "03/10/2026" },
 } as const;
 
 export const CARD_WIDTH_BY_STEP = [

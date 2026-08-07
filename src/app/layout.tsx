@@ -9,6 +9,7 @@ import {
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { ThemeProvider } from "@/libs/ThemeProvider";
 import Providers from "@/providers/Provider";
+import Navbar from "@/components/Navbar";
 
 export default async function RootLayout({
     children,
@@ -33,6 +34,7 @@ export default async function RootLayout({
                                 lang={lang}
                                 translations={translations}
                             >
+                                <Navbar />
                                 {children}
                             </TranslationProvider>
                         </div>

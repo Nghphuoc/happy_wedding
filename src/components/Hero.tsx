@@ -6,7 +6,7 @@ import { Heart } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import couple from "@/assets/blackCouple.jpg";
-import whiteCouple from "@/assets/whiteCouple.jpg";
+import whiteCouple from "@/assets/muoi.jpg";
 import { Divider } from "@/utils/flower";
 
 const Hero = () => {

@@ -59,6 +59,7 @@ export default function InteractiveWeddingCard({
                         <CardDetails
                             visible={step === 2}
                             onClose={handleClose}
+                            checkLocation={checkLocation}
                         />
                     </div>
                 </div>

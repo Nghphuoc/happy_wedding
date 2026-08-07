@@ -2,6 +2,7 @@ import { Great_Vibes, Playfair_Display } from "next/font/google";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { GoldDivider } from "./ui";
 import { WEDDING } from "./wedding.config";
+import { montserrat } from "@/utils/Fonts";
 
 const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -32,17 +33,29 @@ export function CardMain({ showHint, name, checkLocation }: CardMainProps) {
                 <p className="text-sm sm:text-base font-medium border-b border-dashed border-[#5a101d]/30 pb-1 w-3/4 mx-auto mb-1">
                     {name || "Quý Khách"}
                 </p>
-                <p className="text-[11px] sm:text-xs mb-1">
+                <p className={`text-[10px] sm:text-xs mb-1 ${montserrat.className}`}>
                     Đến dự buổi tiệc chung vui cùng gia đình chúng tôi
                 </p>
 
-                <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold mt-2 text-[#721527]">
-                    {groomName}
-                </h4>
-                <span className="text-3xl italic text-[#dca54c]">&</span>
-                <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold text-[#721527] mb-1">
-                    {brideName}
-                </h4>
+                {checkLocation ? (
+                    <><h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold mt-2 text-[#721527]">
+                        {groomName}
+                    </h4>
+                    <span className="text-3xl italic text-[#dca54c]">&</span>
+                    <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold text-[#721527] mb-1">
+                        {brideName}
+                    </h4></>
+                ) : (
+                    <>
+                    <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold mt-2 text-[#721527]">
+                        {brideName}
+                    </h4>
+                        <span className="text-3xl italic text-[#dca54c]">&</span>
+                    <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold text-[#721527] mb-1">
+                        {groomName}
+                    </h4></>
+
+                )}
 
                 <GoldDivider className="mx-auto my-2.5" />
 
@@ -70,11 +83,11 @@ export function CardMain({ showHint, name, checkLocation }: CardMainProps) {
                     ))}
                 </div>
 
-                <p className={`text-xs sm:text-sm mt-2 font-medium ${playfair.className}`}>
+                <p className={`text-sm sm:text-xs font-bold uppercase ${montserrat.className}`}>
                     {venue}
                 </p>
-                <p className="text-[10px] sm:text-[12px] text-[#8c7462] font-medium">
-                    {checkLocation ? address_male : address_female}
+                <p className={`text-[10px] sm:text-[12px] text-[#8c7462] font-bold ${montserrat.className}`}>
+                    DC: {checkLocation ? address_male : address_female}
                 </p>
             </div>
 

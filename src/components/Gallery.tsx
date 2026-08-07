@@ -11,7 +11,6 @@ import {
 
 import { Divider } from "@/utils/flower";
 import { useTranslation } from "@/contexts/TranslationContext";
-import couple from "@/assets/whiteCouple.jpg";
 import image2 from "@/assets/blackCouple.jpg";
 import gun from "@/assets/gun.jpg";
 import bring from "@/assets/bring.jpg";
@@ -28,8 +27,8 @@ import muoi from "@/assets/muoi.jpg";
 import dance from "@/assets/dance.jpg";
 import walk from "@/assets/walk.jpg";
 import noName from "@/assets/noName.jpg";
-
-import { playfair } from "./Events";
+import yesido from "@/assets/yesido.jpg";
+import { playfair } from "@/utils/Fonts";
 
 interface GalleryItem {
   src: StaticImageData;
@@ -46,9 +45,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
     rotation: "-rotate-2",
   },
   {
-    src: couple,
-    alt: "Wedding rings and intertwined hands",
-    caption: "Forever starts here",
+    src: yesido,
+    alt: "Yesido couple",
+    caption: "Yesido couple",
     rotation: "rotate-1",
   },
   {

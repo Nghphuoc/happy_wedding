@@ -9,8 +9,9 @@
 
         "story1": {
             "title": "Câu chuyện của chúng tôi",
-            "content": "Chúng tôi gặp nhau vào một chiều mưa tháng 8. Linh đang loay hoay với chiếc ô bị hỏng, còn Vinh thì tình cờ đi ngang qua. Một câu chào ngại ngùng, một nụ cười trao nhau, và phần còn lại đã trở thành lịch sử.",
-            "subContent": "Trải qua gần một thập kỉ bên nhau, cùng nhau vượt qua bao thăng trầm, chúng tôi nhận ra mình không thể sống thiếu người kia. Ngày Vinh quỳ gối cầu hôn dưới bầu trời đầy sao, Linh biết rằng đây chính là bến đỗ bình yên nhất của đời mình."
+            "content": "Chúng tôi gặp nhau hồi cấp 3, trong một lớp học thêm Toán. Ban đầu, hai đứa chỉ định đến để tìm x, ai ngờ Vinh vừa nhìn thấy Linh đã tìm được luôn “đáp án của đời mình”.",
+            "subContent": "Từ hai cô cậu học trò từng đau đầu vì phương trình, chúng tôi đã cùng nhau vượt qua nhiều “bài toán khó” của cuộc sống. Sau một thập kỷ, Vinh quyết định đưa ra đáp án cuối cùng bằng một lời cầu hôn. Linh đồng ý, bởi sau ngần ấy năm, hai đứa đều hiểu rằng: ",
+            "highlight": "\"Toán có thể sai, nhưng chọn nhau thì chắc chắn đúng.\""
         },
 
         "story2": {
@@ -41,16 +42,20 @@
     "events": {
         "title": "Sự kiện & Lễ cưới",
         "Photography": {
-            "title": "Chụp ảnh cưới",
-            "description": "Chụp hình cưới lưu giữ những khoảnh khắc đáng nhớ và tạo ra những kỷ niệm vĩnh cửu cho cặp đôi."
+            "title": "Tiệc nhóm họ",
+            "description": "Bữa cơm thân mật mở đầu cho ngày vui, đánh dấu sự gắn kết chính thức giữa hai bên gia đình."
         },
         "Ceremony": {
-            "title": "Lễ cưới",
-            "description": "Nghi thức cưới tuyên thề nơi cặp đôi trao lời thề hôn nhân và cam kết bên nhau trước sự chứng kiến của gia đình và bạn bè."
+            "title": "Thánh Lễ Hôn Phối",
+            "description": "Trong không gian trang nghiêm và thiêng liêng, cô dâu chú rể cử hành nghi thức hôn phối và trao lời thề nguyện trước Thiên Chúa."
         },
         "Drink & Dinner": {
             "title": "Tiệc cưới",
-            "description": "Bữa tiệc mừng hạnh phúc của cặp đôi, nơi gia đình và bạn bè tụ họp để chia sẻ niềm vui và chúc phúc cho đôi uyên ương."
+            "description": "Buổi tiệc chúc mừng ngày thành hôn, nơi cô dâu chú rể đón tiếp quan khách và ghi dấu khoảnh khắc khởi đầu cho hành trình hôn nhân."
+        },
+        "thankYou": {
+            "title": "Lời cảm ơn",
+            "description": "Chúng tôi xin gửi lời cảm ơn chân thành đến tất cả những người đã tham dự và chúc phúc cho chúng tôi trong ngày trọng đại này."
         }
     },
 

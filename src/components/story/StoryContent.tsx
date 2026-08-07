@@ -11,6 +11,7 @@ type StoryContentProps = {
   title: string;
   content: string;
   subContent: string;
+  highlight: string;
   titleCard: string;
   contentCard: string;
 };
@@ -19,6 +20,7 @@ export const StoryContent = ({
   title,
   content,
   subContent,
+  highlight,
   titleCard,
   contentCard
 }: StoryContentProps) => (
@@ -57,14 +59,15 @@ export const StoryContent = ({
       variants={contentItemVariants}
       className="mb-5 text-sm leading-7 text-[#665455] sm:text-base sm:leading-8"
     >
-      {content}
+      <em>{content}</em>
     </motion.p>
 
     <motion.p
       variants={contentItemVariants}
       className="text-sm leading-7 text-[#665455] sm:text-base sm:leading-8"
     >
-      {subContent}
+      <em>{subContent}</em>
+      <strong> {highlight} </strong>
     </motion.p>
 
     <motion.div
