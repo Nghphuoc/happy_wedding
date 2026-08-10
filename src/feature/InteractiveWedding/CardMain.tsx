@@ -14,7 +14,7 @@ type CardMainProps = {
 };
 
 export function CardMain({ showHint, name, checkLocation }: CardMainProps) {
-    const { groomName, brideName, date_male, date_female, venue, address_male, address_female } = WEDDING;
+    const { groomName, brideName, nuptialMass,  } = WEDDING;
 
     return (
         <div className="w-full md:w-105 lg:w-115 shrink-0 flex flex-col items-center justify-center px-5 sm:px-8 py-10 sm:py-12 text-center relative z-10">
@@ -57,38 +57,21 @@ export function CardMain({ showHint, name, checkLocation }: CardMainProps) {
 
                 )}
 
-                <GoldDivider className="mx-auto my-2.5" />
+                {/* <GoldDivider className="mx-auto my-2.5" /> */}
 
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-                    {checkLocation ? date_male.weekday : date_female.weekday}
-                </p>
-
-                <div className="flex items-center justify-center gap-3 sm:gap-4 text-[#721527] my-1.5">
-                    {(
-                        checkLocation 
-                            ? [date_male.day, date_male.month, date_male.year]
-                            : [date_female.day, date_female.month, date_female.year]
-                    ).map((part, i) => (
-                        <span
-                            key={i}
-                            className="flex items-center gap-3 sm:gap-4"
-                        >
-                            <span className="text-lg sm:text-xl">{part}</span>
-                            {i < 2 && (
-                                <span className="text-2xl sm:text-3xl font-light">
-                                    |
-                                </span>
-                            )}
-                        </span>
-                    ))}
+                <div className={`text-[#5a101d] flex flex-col gap-2 items-center w-full ${montserrat.className}`} >
+                    <GoldDivider className="mx-auto my-2 mb-8"/>
+                    <p className="text-sm sm:text-xs font-bold uppercase items-center text-center">
+                        Thánh Lễ Hôn Phối Sẽ Được Cử Hành Tại
+                    </p>
+                    <p className="text-[10px] sm:text-[12px] text-[#8c7462] font-bold">
+                        {nuptialMass.location}
+                    </p>
+                    <p className="text-[10px] sm:text-[12px] text-[#8c7462] font-bold">
+                        Vào Lúc: {nuptialMass.time} Giờ | Ngày {nuptialMass.date}
+                    </p>
                 </div>
 
-                <p className={`text-sm sm:text-xs font-bold uppercase ${montserrat.className}`}>
-                    {venue}
-                </p>
-                <p className={`text-[10px] sm:text-[12px] text-[#8c7462] font-bold ${montserrat.className}`}>
-                    DC: {checkLocation ? address_male : address_female}
-                </p>
             </div>
 
             {showHint && (

@@ -14,7 +14,8 @@ interface TimeLeft {
 
 const Countdown = () => {
   // TODO: Cần chỉnh lại ngày giờ cho đúng với ngày cưới của mình nhé
-  const targetDate = new Date("2026-10-04T00:00:00");
+  const targetDate = new Date("2026-10-03T10:30:00");
+
   const calculateTimeLeft = (): TimeLeft => {
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();

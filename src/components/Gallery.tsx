@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
-import { ChevronLeft, ChevronRight, Heart, } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import {
   motion,
   useReducedMotion,
@@ -139,7 +139,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     alt: "Couple sharing a quiet moment together",
     caption: "A quiet moment",
     rotation: "-rotate-2",
-  }
+  },
 ];
 
 const SWIPE_THRESHOLD = 60;
@@ -228,15 +228,7 @@ const Gallery = () => {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.12}
             onDragEnd={handleDragEnd}
-            className="
-              flex snap-x snap-mandatory gap-5
-              overflow-x-auto scroll-smooth
-              px-[8vw] pb-8 pt-4
-              scrollbar-none
-              [&::-webkit-scrollbar]:hidden
-              sm:gap-6 sm:px-[18vw]
-              lg:px-[33%]
-            "
+            className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-[8vw] pb-8 pt-4 scrollbar-none [&::-webkit-scrollbar]:hidden sm:gap-6 sm:px-[18vw] lg:px-[33%]"
           >
             {GALLERY_ITEMS.map((item, index) => {
               const isActive = index === activeIndex;
@@ -256,38 +248,15 @@ const Gallery = () => {
                     duration: 0.45,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className={`
-                    group relative shrink-0 snap-center cursor-pointer
-                    w-[78vw] max-w-87.5
-                    rounded-sm border border-[#dca54c]
-                    bg-[#fffaf2] p-2
-                    shadow-[0_18px_50px_rgba(114,21,39,0.13)]
-                    transition-shadow duration-500
-                    hover:shadow-[0_25px_65px_rgba(114,21,39,0.2)]
-                    sm:w-[52vw]
-                    md:w-[38vw]
-                    lg:w-[30vw]
-                    ${item.rotation}
-                  `}
+                  className={`group relative shrink-0 snap-center cursor-pointer w-[78vw] max-w-87.5 rounded-sm border border-[#dca54c] bg-[#fffaf2] p-2 shadow-[0_18px_50px_rgba(114,21,39,0.13)] transition-shadow duration-500 hover:shadow-[0_25px_65px_rgba(114,21,39,0.2)] sm:w-[52vw] md:w-[38vw] lg:w-[30vw] ${item.rotation}`}
                 >
                   <div className="relative aspect-4/5 overflow-hidden bg-[#eee5d8]">
                     <Image
                       src={item.src}
                       alt={item.alt}
                       fill
-                      sizes="
-                        (max-width: 640px) 78vw,
-                        (max-width: 768px) 52vw,
-                        (max-width: 1024px) 38vw,
-                        30vw
-                      "
-                      className="
-                        object-cover
-                        transition-transform
-                        duration-700
-                        ease-[cubic-bezier(.22,1,.36,1)]
-                        group-hover:scale-[1.035]
-                      "
+                      sizes="(max-width: 640px) 78vw, (max-width: 768px) 52vw, (max-width: 1024px) 38vw, 30vw"
+                      className="object-cover transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.035]"
                     />
 
                     <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
@@ -328,21 +297,7 @@ const Gallery = () => {
             onClick={handlePrevious}
             disabled={activeIndex === 0}
             aria-label="Ảnh trước"
-            className="
-              absolute left-0 top-1/2 z-20
-              hidden size-12 -translate-y-1/2
-              place-items-center rounded-full
-              border border-[#dca54c]/60
-              bg-[#fffaf2]/90 text-[#721527]
-              shadow-lg backdrop-blur
-              transition duration-300
-              hover:-translate-x-1
-              hover:border-[#dca54c]
-              hover:bg-white
-              disabled:pointer-events-none
-              disabled:opacity-30
-              md:grid
-            "
+            className="absolute left-0 top-1/2 z-20 hidden size-12 -translate-y-1/2 place-items-center rounded-full border border-[#dca54c]/60 bg-[#fffaf2]/90 text-[#721527] shadow-lg backdrop-blur transition duration-300 hover:-translate-x-1 hover:border-[#dca54c] hover:bg-white disabled:pointer-events-none disabled:opacity-30 md:grid"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -352,21 +307,7 @@ const Gallery = () => {
             onClick={handleNext}
             disabled={activeIndex === GALLERY_ITEMS.length - 1}
             aria-label="Ảnh tiếp theo"
-            className="
-              absolute right-0 top-1/2 z-20
-              hidden size-12 -translate-y-1/2
-              place-items-center rounded-full
-              border border-[#dca54c]/60
-              bg-[#fffaf2]/90 text-[#721527]
-              shadow-lg backdrop-blur
-              transition duration-300
-              hover:translate-x-1
-              hover:border-[#dca54c]
-              hover:bg-white
-              disabled:pointer-events-none
-              disabled:opacity-30
-              md:grid
-            "
+            className="absolute right-0 top-1/2 z-20 hidden size-12 -translate-y-1/2 place-items-center rounded-full border border-[#dca54c]/60 bg-[#fffaf2]/90 text-[#721527] shadow-lg backdrop-blur transition duration-300 hover:translate-x-1 hover:border-[#dca54c] hover:bg-white disabled:pointer-events-none disabled:opacity-30 md:grid"
           >
             <ChevronRight className="size-5" />
           </button>
@@ -380,15 +321,11 @@ const Gallery = () => {
               onClick={() => goToSlide(index)}
               aria-label={`Đi đến ảnh ${index + 1}`}
               aria-current={activeIndex === index}
-              className={`
-                h-2 rounded-full
-                transition-all duration-300
-                ${
-                  activeIndex === index
-                    ? "w-8 bg-[#721527]"
-                    : "w-2 bg-[#dca54c]/45 hover:bg-[#dca54c]"
-                }
-              `}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index
+                  ? "w-8 bg-[#721527]"
+                  : "w-2 bg-[#dca54c]/45 hover:bg-[#dca54c]"
+              }`}
             />
           ))}
         </div>

@@ -36,60 +36,17 @@ const Hero = () => {
             <button
               type="button"
               onClick={() => setIsSendBlessingOpen(true)}
-              className="
-                        group relative inline-flex items-center justify-center gap-3
-                        overflow-hidden rounded-full
-                        border border-[#dca54c]
-                        bg-[#721527]
-                        px-8 py-4
-
-                        font-semibold tracking-[0.08em] text-[#fff8ed]
-
-                        shadow-[0_20px_50px_rgba(114,21,39,0.28)]
-
-                        transition-[transform,box-shadow]
-                        duration-500
-
-                        hover:-translate-y-1
-                        hover:shadow-[0_30px_70px_rgba(114,21,39,0.38)]
-
-                        active:scale-[0.98]
-
-                        focus:outline-none
-                        focus:ring-4
-                        focus:ring-[#dca54c]/30
-                    "
+              className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-[#dca54c] bg-[#721527] px-8 py-4 font-semibold tracking-[0.08em] text-[#fff8ed] shadow-[0_20px_50px_rgba(114,21,39,0.28)] transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(114,21,39,0.38)] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-[#dca54c]/30"
             >
               {/* Light sweep */}
               <span
                 aria-hidden="true"
-                className="
-                            absolute inset-0
-                            -translate-x-full
-                            bg-linear-to-r
-                            from-transparent
-                            via-white/20
-                            to-transparent
-                            transition-transform
-                            duration-1000
-                            group-hover:translate-x-full
-                            "
+                className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full"
               />
 
               <Heart
                 aria-hidden="true"
-                className="
-                        relative z-10
-                        h-5 w-5
-                        fill-[#dca54c]
-                        text-[#dca54c]
-
-                        transition-transform
-                        duration-500
-
-                        group-hover:rotate-12
-                        group-hover:scale-125
-                        "
+                className="relative z-10 h-5 w-5 fill-[#dca54c] text-[#dca54c] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-125"
               />
 
               <span className="relative z-10">{t("sendMessages")}</span>
@@ -102,7 +59,7 @@ const Hero = () => {
             onClick={() => setActiveImage("back")}
             className={`absolute right-[2%] w-[68%] rotate-2 border border-[#dca54c] bg-white p-2 shadow-lg sm:w-[66%] ${
               activeImage === "back" ? "z-20 scale-105" : "z-10"
-            } `}
+            }`}
           >
             <Image
               src={whiteCouple}
@@ -118,7 +75,7 @@ const Hero = () => {
             onClick={() => setActiveImage("front")}
             className={`absolute bottom-1 left-[-2%] w-[66%] -rotate-3 border border-[#dca54c] bg-white p-2 shadow-xl sm:w-[64%] ${
               activeImage === "front" ? "z-20 scale-105" : "z-10"
-            } `}
+            }`}
           >
             <Image
               src={couple}

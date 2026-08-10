@@ -90,25 +90,17 @@ const SectionHeader = ({
         stiffness: 170,
         damping: 15,
       }}
-      className="
-        mx-auto mb-5 grid size-14 place-items-center rounded-full border border-[#dca54c]/40
-        bg-white/75 text-[#721527] shadow-[0_12px_30px_rgba(114,21,39,0.09)] backdrop-blur
-      "
+      className="mx-auto mb-5 grid size-14 place-items-center rounded-full border border-[#dca54c]/40 bg-white/75 text-[#721527] shadow-[0_12px_30px_rgba(114,21,39,0.09)] backdrop-blur"
     >
       <Heart className="size-6 fill-[#721527]/10" />
     </motion.div>
 
-    <p className="
-      mb-3 text-xs font-semibold uppercase
-      tracking-[0.28em] text-[#9a671d]
-    ">
+    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#9a671d]">
       Wedding timeline
     </p>
 
     <h2
-      className={`
-        ${playfair.className} text-3xl font-semibold leading-tight text-[#721527] sm:text-4xl lg:text-5xl
-      `}
+      className={`${playfair.className} text-3xl font-semibold leading-tight text-[#721527] sm:text-4xl lg:text-5xl`}
     >
       {title}
     </h2>
@@ -156,7 +148,8 @@ const EventImage = ({
     {/* Back frame */}
     <div
       aria-hidden="true"
-      className="absolute inset-3 -z-10 rotate-3 rounded-4xlborder border-[#dca54c]/25 bg-[#721527]/5"/>
+      className="absolute inset-3 -z-10 rotate-3 rounded-4xl border border-[#dca54c]/25 bg-[#721527]/5"
+    />
 
     {/* Top decoration */}
     <div
@@ -186,8 +179,7 @@ const EventImage = ({
         duration: 0.4,
         ease: EASE_OUT,
       }}
-      className="overflow-hidden rounded-[1.75rem] border border-[#dca54c]/45 bg-[#fffaf2] p-2.5 shadow-[0_24px_70px_rgba(82,40,45,0.18)] sm:p-3
-      "
+      className="overflow-hidden rounded-[1.75rem] border border-[#dca54c]/45 bg-[#fffaf2] p-2.5 shadow-[0_24px_70px_rgba(82,40,45,0.18)] sm:p-3"
     >
       <div className="group relative aspect-4/5 overflow-hidden rounded-[1.35rem]">
         <Image
@@ -203,8 +195,7 @@ const EventImage = ({
 
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-t from-[#321014]/55 via-transparent to-white/5
-          "
+          className="absolute inset-0 bg-linear-to-t from-[#321014]/55 via-transparent to-white/5"
         />
 
         <span
@@ -223,10 +214,7 @@ const EventImage = ({
           </p>
 
           <p
-            className={`
-              ${playfair.className}
-              mt-1 text-2xl sm:text-3xl
-            `}
+            className={`${playfair.className} mt-1 text-2xl sm:text-3xl`}
           >
             Quang Vinh &amp; Diem Linh
           </p>
@@ -251,8 +239,7 @@ const EventTimeline = ({
     {/* Desktop timeline line */}
     <div
       aria-hidden="true"
-      className=" absolute bottom-10 left-6.75 top-10 hidden w-px bg-linear-to-b from-transparent via-[#dca54c]/55 to-transparentsm:block
-      "
+      className="absolute bottom-10 left-6.75 top-10 hidden w-px bg-linear-to-b from-transparent via-[#dca54c]/55 to-transparent sm:block"
     />
 
     {events.map((event, index) => (
@@ -275,20 +262,14 @@ const EventTimelineItem = ({
   const Icon = event.icon;
 
   return (
-    <motion.li
-      variants={itemVariants}
-      className="group relative"
-    >
+    <motion.li variants={itemVariants} className="group relative">
       <div
-        className="relative flex gap-4 rounded-2xl border border-transparent px-3 py-4 transition duration-300
-          hover:border-[#dca54c]/25  hover:bg-white/60 hover:shadow-[0_14px_40px_rgba(114,21,39,0.07)]
-          sm:gap-5 sm:px-4 sm:py-5"
+        className="relative flex gap-4 rounded-2xl border border-transparent px-3 py-4 transition duration-300 hover:border-[#dca54c]/25 hover:bg-white/60 hover:shadow-[0_14px_40px_rgba(114,21,39,0.07)] sm:gap-5 sm:px-4 sm:py-5"
       >
         {/* Icon and timeline node */}
         <div className="relative z-10 shrink-0">
           <div
-            className=" grid size-14 place-items-center rounded-full border border-[#dca54c]/35 bg-[#fffaf2] text-[#721527] shadow-[0_8px_24px_rgba(114,21,39,0.09)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#dca54c]
-              group-hover:bg-[#721527] group-hover:text-[#fff8ed] group-hover:shadow-[0_12px_30px_rgba(114,21,39,0.18)]"
+            className="grid size-14 place-items-center rounded-full border border-[#dca54c]/35 bg-[#fffaf2] text-[#721527] shadow-[0_8px_24px_rgba(114,21,39,0.09)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#dca54c] group-hover:bg-[#721527] group-hover:text-[#fff8ed] group-hover:shadow-[0_12px_30px_rgba(114,21,39,0.18)]"
           >
             <Icon
               className="size-5"
@@ -298,7 +279,7 @@ const EventTimelineItem = ({
 
           <span
             aria-hidden="true"
-            className=" absolute -right-1 -top-1 grid size-5 place-items-center rounded-full border-2 border-[#fffaf2] bg-[#dca54c] text-[9px] font-semibold text-[#721527] shadow-sm"
+            className="absolute -right-1 -top-1 grid size-5 place-items-center rounded-full border-2 border-[#fffaf2] bg-[#dca54c] text-[9px] font-semibold text-[#721527] shadow-sm"
           >
             {index + 1}
           </span>
@@ -307,7 +288,7 @@ const EventTimelineItem = ({
         {/* Content */}
         <div className="min-w-0 flex-1 pt-1">
           <h3
-            className={`${playfair.className}text-xl font-medium text-[#721527] transition-colors duration-300 sm:text-2xl`}
+            className={`${playfair.className} text-xl font-medium text-[#721527] transition-colors duration-300 sm:text-2xl`}
           >
             {event.title}
           </h3>
@@ -327,13 +308,10 @@ const EventTimelineItem = ({
 };
 
 const BackgroundDecorations = () => (
-  <div
-    aria-hidden="true"
-    className="pointer-events-none"
-  >
+  <div aria-hidden="true" className="pointer-events-none">
     <div className="absolute -left-32 top-20 -z-10 size-80 rounded-full bg-[#dca54c]/10 blur-3xl sm:size-96" />
 
-    <div className="absolute -right-32 bottom-0 -z-10 size-80 rounded-full  bg-[#721527]/10 blur-3xl sm:size-96" />
+    <div className="absolute -right-32 bottom-0 -z-10 size-80 rounded-full bg-[#721527]/10 blur-3xl sm:size-96" />
 
     <Flower2
       strokeWidth={1}
@@ -342,7 +320,7 @@ const BackgroundDecorations = () => (
 
     <Heart
       strokeWidth={1}
-      className=" absolute right-4 top-52 size-14 rotate-12 text-[#721527]/10 sm:right-8 sm:size-20 lg:right-[5%]"
+      className="absolute right-4 top-52 size-14 rotate-12 text-[#721527]/10 sm:right-8 sm:size-20 lg:right-[5%]"
     />
   </div>
 );
@@ -381,15 +359,7 @@ export default function Events() {
   return (
     <section
       id="events"
-      className={`
-        ${montserrat.className}
-        relative isolate overflow-hidden
-        bg-[linear-gradient(180deg,#fffdf9_0%,#fbf6ee_50%,#fffdf9_100%)]
-        px-4 py-16
-        sm:px-6 sm:py-20
-        md:py-24
-        lg:px-8 lg:py-28
-      `}
+      className={`${montserrat.className} relative isolate overflow-hidden bg-[linear-gradient(180deg,#fffdf9_0%,#fbf6ee_50%,#fffdf9_100%)] px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28`}
     >
       <BackgroundDecorations />
 
@@ -399,12 +369,7 @@ export default function Events() {
           reduceMotion={reduceMotion}
         />
 
-        <div className="
-          grid grid-cols-1 items-center
-          gap-14
-          lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]
-          lg:gap-20
-        ">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
           <EventImage reduceMotion={reduceMotion} />
 
           <EventTimeline events={events} />

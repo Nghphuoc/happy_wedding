@@ -1,10 +1,10 @@
-import { SectionHeading } from "@/feature/InteractiveWedding/ui";
-import { Clock } from "lucide-react";
+// import { SectionHeading } from "@/feature/InteractiveWedding/ui";
+// import { Clock } from "lucide-react";
 
 function Timeline({ items }: { items: { time: string; label: string }[] }) {
     return (
         <div className="text-center w-full">
-            <SectionHeading icon={Clock} label="Timeline" />
+            {/* <SectionHeading icon={Clock} label="Timeline" /> */}
             <div className="space-y-2.5 text-xs sm:text-sm px-4 mt-3">
                 {items.map(({ time, label }, i) => (
                     <div

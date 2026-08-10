@@ -1,5 +1,4 @@
 import { RotateCcw } from "lucide-react";
-import { GoldDivider, SectionHeading } from "./ui";
 import { WEDDING } from "./wedding.config";
 import Timeine from "@/components/shares/TimeLine";
 import QRSection from "@/components/shares/QRSection";
@@ -11,8 +10,8 @@ interface CardDetailsProps {
     checkLocation?: boolean;
 }
 
-export function CardDetails({ visible, onClose }: CardDetailsProps) {
-    const { timeline, nuptialMass } = WEDDING;
+export function CardDetails({ visible, onClose, checkLocation }: CardDetailsProps) {
+    const { timeline, date_female, date_male, venue, address_male, address_female } = WEDDING;
 
     return (
         <div
@@ -27,28 +26,19 @@ export function CardDetails({ visible, onClose }: CardDetailsProps) {
                     : "md:w-0 md:opacity-0",
             ].join(" ")}
         >
+
             <div className="hidden md:block absolute left-0 top-0 w-5 h-full bg-linear-to-r from-black/4 to-transparent pointer-events-none z-10" />
 
-            <div className="flex flex-col items-center justify-center gap-7 sm:gap-8 px-6 sm:px-8 py-10 sm:py-12 text-[#5a101d] w-full md:w-105 lg:w-115">
+            <div className="flex flex-col items-center justify-center gap-3.5 sm:gap-5 px-6 sm:px-8 py-10 sm:py-12 text-[#5a101d] w-full md:w-105 lg:w-115">
+                
+                {mainData(checkLocation as boolean, date_male, date_female, venue, address_male, address_female)}
+
                 <Timeine
-                    items={
-                        timeline as unknown as { time: string; label: string }[]
-                    }
+                    items={timeline as unknown as { time: string; label: string }[]}
                 />
+
                 <QRSection />
 
-                <div className={`text-[#5a101d] flex flex-col gap-2 items-center w-full ${montserrat.className}`} >
-                    <GoldDivider className="mx-auto my-2 mb-8"/>
-                    <p className="text-sm sm:text-xs font-bold uppercase items-center text-center">
-                        Thánh Lễ Hôn Phối Sẽ Được Cử Hành Tại
-                    </p>
-                    <p className="text-[10px] sm:text-[12px] text-[#8c7462] font-bold">
-                        {nuptialMass.location}
-                    </p>
-                    <p className="text-[10px] sm:text-[12px] text-[#8c7462] font-bold">
-                        Vào Lúc: {nuptialMass.time} Giờ | Ngày {nuptialMass.date}
-                    </p>
-                </div>
             </div>
 
             {visible && (
@@ -63,5 +53,46 @@ export function CardDetails({ visible, onClose }: CardDetailsProps) {
                 </button>
             )}
         </div>
+    );
+}
+
+
+const mainData = (checkLocation: boolean, date_male: any, date_female: any, venue: string, address_male: string, address_female: string) => {
+    return (
+        <>
+        <div className={`text-[#5a101d] flex flex-col gap-2 sm:pt-6 font-bold items-center w-full ${montserrat.className}`} >
+
+                    <p className="sm:text-sm md:text-lg font-bold uppercase">
+                        {checkLocation ? date_male.weekday : date_female.weekday}
+                    </p>
+
+                    <div className="flex items-center justify-center gap-3 sm:gap-4 text-[#721527] my-1.5">
+                        {(
+                            checkLocation 
+                                ? [date_male.day, date_male.month, date_male.year]
+                                : [date_female.day, date_female.month, date_female.year]
+                        ).map((part, i) => (
+                            <span
+                                key={i}
+                                className="flex items-center gap-3 sm:gap-4"
+                            >
+                                <span className="text-lg sm:text-xl">{part}</span>
+                                {i < 2 && (
+                                    <span className="text-2xl sm:text-3xl font-light">
+                                        |
+                                    </span>
+                                )}
+                            </span>
+                        ))}
+                    </div>
+
+                    <p className={`text-sm sm:text-xs font-bold uppercase`}>
+                        {venue}
+                    </p>
+                    <p className={`text-[10px] sm:text-[12px] text-[#8c7462] font-bold`}>
+                        DC: {checkLocation ? address_male : address_female}
+                    </p>
+                </div>
+        </>
     );
 }

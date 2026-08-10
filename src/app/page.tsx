@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import Countdown from "@/components/Countdown";
 import Story from "@/components/Story";
 import Events from "@/components/Events";
-import Dresscode from "@/components/Dresscode";
+import WeddingLocations from "@/components/WeddingLocations";
 import Gallery from "@/components/Gallery";
 import FloatingInvitation from "@/components/FloatingInvitation";
 
@@ -15,7 +15,7 @@ export default function WeddingPage() {
             <Story />
             <Events />
             <Gallery />
-            <Dresscode />
+            <WeddingLocations />
             <FloatingInvitation />
         </div>
     );
