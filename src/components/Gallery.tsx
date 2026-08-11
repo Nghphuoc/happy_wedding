@@ -297,7 +297,7 @@ const Gallery = () => {
             onClick={handlePrevious}
             disabled={activeIndex === 0}
             aria-label="Ảnh trước"
-            className="absolute left-0 top-1/2 z-20 hidden size-12 -translate-y-1/2 place-items-center rounded-full border border-[#dca54c]/60 bg-[#fffaf2]/90 text-[#721527] shadow-lg backdrop-blur transition duration-300 hover:-translate-x-1 hover:border-[#dca54c] hover:bg-white disabled:pointer-events-none disabled:opacity-30 md:grid"
+            className="absolute left-0 top-1/2 z-20 size-12 -translate-y-1/2 place-items-center rounded-full border border-[#dca54c]/60 bg-[#fffaf2]/90 text-[#721527] shadow-lg backdrop-blur transition duration-300 hover:-translate-x-1 hover:border-[#dca54c] hover:bg-white disabled:pointer-events-none disabled:opacity-30 md:grid"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -307,7 +307,7 @@ const Gallery = () => {
             onClick={handleNext}
             disabled={activeIndex === GALLERY_ITEMS.length - 1}
             aria-label="Ảnh tiếp theo"
-            className="absolute right-0 top-1/2 z-20 hidden size-12 -translate-y-1/2 place-items-center rounded-full border border-[#dca54c]/60 bg-[#fffaf2]/90 text-[#721527] shadow-lg backdrop-blur transition duration-300 hover:translate-x-1 hover:border-[#dca54c] hover:bg-white disabled:pointer-events-none disabled:opacity-30 md:grid"
+            className="absolute right-0 top-1/2 z-20 size-12 -translate-y-1/2 place-items-center rounded-full border border-[#dca54c]/60 bg-[#fffaf2]/90 text-[#721527] shadow-lg backdrop-blur transition duration-300 hover:translate-x-1 hover:border-[#dca54c] hover:bg-white disabled:pointer-events-none disabled:opacity-30 md:grid"
           >
             <ChevronRight className="size-5" />
           </button>

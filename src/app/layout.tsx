@@ -10,6 +10,7 @@ import { TranslationProvider } from "@/contexts/TranslationContext";
 import { ThemeProvider } from "@/libs/ThemeProvider";
 import Providers from "@/providers/Provider";
 import Navbar from "@/components/Navbar";
+import AnimatedTabTitle from "@/components/AnimatedTabTitle";
 
 export default async function RootLayout({
     children,
@@ -22,6 +23,7 @@ export default async function RootLayout({
     return (
         <html lang={lang} suppressHydrationWarning>
             <body>
+                <AnimatedTabTitle />
                 <Providers>
                     <ThemeProvider
                         attribute="class"

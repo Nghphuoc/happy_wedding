@@ -38,22 +38,25 @@ export function CardMain({ showHint, name, checkLocation }: CardMainProps) {
                 </p>
 
                 {checkLocation ? (
-                    <><h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold mt-2 text-[#721527]">
+                    <><h5 
+                    className="text-xl font-bold mt-2 text-[#721527]">
                         {groomName}
-                    </h4>
-                    <span className="text-3xl italic text-[#dca54c]">&</span>
-                    <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold text-[#721527] mb-1">
+                    </h5>
+                        <span className="text-3xl italic text-[#dca54c]">&</span>
+                    <h5 
+                    className="text-xl font-bold text-[#721527] mb-1">
                         {brideName}
-                    </h4></>
+                    </h5></>
                 ) : (
                     <>
-                    <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold mt-2 text-[#721527]">
+                    <h5 className="text-xl font-bold mt-2 text-[#721527]">
                         {brideName}
-                    </h4>
+                    </h5>
                         <span className="text-3xl italic text-[#dca54c]">&</span>
-                    <h4 className="text-[clamp(1.4rem,5vw,2rem)] font-bold text-[#721527] mb-1">
+                    <h5
+                     className="text-xl font-bold text-[#721527] mb-1">
                         {groomName}
-                    </h4></>
+                    </h5></>
 
                 )}
 
