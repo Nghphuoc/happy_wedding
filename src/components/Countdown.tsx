@@ -94,8 +94,8 @@ const Countdown = () => {
 
         <div className="flex flex-col items-center lg:items-start w-full lg:w-auto">
           <div className={`flex items-center gap-4 md:gap-6 mb-8 md:mb-10 text-center lg:text-left ${playfair.className}`}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#4a3f3a]">
-              QUANG VINH{" "}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-[#4a3f3a]">
+              QUANG VINH
                 &amp;
               DIỄM LINH
             </h2>

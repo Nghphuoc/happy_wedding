@@ -41,7 +41,7 @@ export const StoryHeader = ({
       Our journey
     </p>
 
-    <h2 className={`text-3xl font-semibold leading-tight text-[#721527] sm:text-4xl lg:text-5xl ${playfair.className}`}>
+    <h2 className={`text-2xl font-semibold leading-tight text-[#721527] sm:text-4xl lg:text-4xl ${playfair.className}`}>
       {title}
     </h2>
 
