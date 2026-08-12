@@ -5,8 +5,8 @@ import { Flower2 } from "lucide-react";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
-import couple from "@/assets/blackCouple.jpg";
-import whiteCouple from "@/assets/muoi.jpg";
+import mainHero from "@/assets/mainHero.jpg";
+import chutchut from "@/assets/chutchut.jpg";
 import { Divider } from "@/utils/flower";
 
 const Hero = () => {
@@ -18,15 +18,15 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-5 pb-20 pt-5 sm:px-8 md:grid-cols-2 md:gap-12 md:px-8 md:pb-24 lg:min-h-[calc(100svh-7rem)] lg:px-10"
+        className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-5 pb-5 pt-5 sm:px-8 md:grid-cols-2 md:gap-12 md:px-8 md:pb-10 lg:min-h-[calc(100svh-7rem)] lg:px-10"
       >
         <div className="order-2 text-center md:order-1 md:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a671d]">
             {t("mainTitle")}
           </p>
           <h1 className="mt-5 font-serif text-4xl font-bold leading-[1.12] text-[#721527] sm:text-5xl lg:text-6xl">
-            Quang Vinh <br />
-            <span className="text-3xl">&</span> Diem Linh
+            QUANG VINH <br />
+            <span className="text-3xl">&</span> DIỄM LINH
           </h1>
           <Divider icon={<Flower2 size={18} />} align="left" />
           <p className="mx-auto max-w-xl text-base leading-8 text-[#564243] md:mx-0 lg:text-lg">
@@ -62,11 +62,11 @@ const Hero = () => {
             }`}
           >
             <Image
-              src={whiteCouple}
+              src={mainHero}
               alt="Bride and groom"
               priority
               sizes="(max-width: 768px) 68vw, 34vw"
-              className="block h-auto w-full grayscale"
+              className="block h-auto w-full"
             />
           </figure>
 
@@ -78,7 +78,7 @@ const Hero = () => {
             }`}
           >
             <Image
-              src={couple}
+              src={chutchut}
               alt="Vinh and Linh in wedding attire"
               priority
               sizes="(max-width: 768px) 66vw, 32vw"

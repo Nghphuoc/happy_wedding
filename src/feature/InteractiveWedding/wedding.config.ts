@@ -1,6 +1,6 @@
 export const WEDDING = {
     groomName: "Nguyễn Quang Vinh",
-    brideName: "Nguyễn Ngọc Diem Linh",
+    brideName: "Nguyễn Ngọc Diễm Linh",
     date_female: { day: "03", month: "10", year: "2026", weekday: "Thứ Bảy" },
     date_male: { day: "04", month: "10", year: "2026", weekday: "Chủ Nhật" },
     venue: "Tiệc Cưới Sẽ Được Tổ Chức Tại Tự Gia",

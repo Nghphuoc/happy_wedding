@@ -43,19 +43,32 @@ export function CardCover({ textureSrc, visible, checkLocation }: CardCoverProps
 
                 <GoldDivider className="relative z-10 my-3" />
 
-                <h4
-                    className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}
-                >
-                    {groomName} 
-                </h4>
+                {checkLocation ? (
+                    <>
+                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                        {groomName} 
+                    </h4>
 
-                <span className=" relative z-10 text-lg text-[#dca54c] tracking-wider italic">&</span>
+                        <span className=" relative z-10 text-lg text-[#dca54c] tracking-wider italic">&</span>
 
-                <h4
-                    className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}
-                >
-                    {brideName}
-                </h4>
+                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                            {brideName}
+                    </h4>
+                    </>
+                ) : (
+                    <>
+                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                        {brideName} 
+                    </h4>
+
+                        <span className=" relative z-10 text-lg text-[#dca54c] tracking-wider italic">&</span>
+
+                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                            {groomName}
+                    </h4>
+                    </>
+
+                )}
 
                 <p
                     className={`relative z-10 text-[clamp(0.75rem,2.5vw,1rem)] uppercase tracking-[0.3em] text-[#dca54c]/70 mt-2 ${playfair.className}`}

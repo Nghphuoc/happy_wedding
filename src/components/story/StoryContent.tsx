@@ -6,6 +6,7 @@ import {
   contentVariants,
   VIEWPORT,
 } from "./constants";
+import { montserrat, playfair } from "@/utils/Fonts";
 
 type StoryContentProps = {
   title: string;
@@ -41,7 +42,7 @@ export const StoryContent = ({
 
     <motion.h3
       variants={contentItemVariants}
-      className="mb-5 font-serif text-2xl font-semibold leading-tight text-[#721527] sm:text-3xl lg:text-4xl"
+      className={`mb-5 ${playfair.className} text-2xl font-semibold leading-tight text-[#721527] sm:text-3xl lg:text-4xl`}
     >
       {title}
     </motion.h3>

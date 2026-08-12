@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Couple from "@/assets/countDown.jpg";
 import Rose from "@/assets/rose.png";
 import Image from "next/image";
+import { playfair } from "@/utils/Fonts";
 
 interface TimeLeft {
   days: number;
@@ -92,13 +93,11 @@ const Countdown = () => {
         </div>
 
         <div className="flex flex-col items-center lg:items-start w-full lg:w-auto">
-          <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-10 text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#4a3f3a]">
-              Quang Vinh{" "}
-              <span className="text-xl md:text-2xl font-light mx-1 md:mx-2">
-                &
-              </span>{" "}
-              Diem Linh
+          <div className={`flex items-center gap-4 md:gap-6 mb-8 md:mb-10 text-center lg:text-left ${playfair.className}`}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#4a3f3a]">
+              QUANG VINH{" "}
+                &amp;
+              DIỄM LINH
             </h2>
           </div>
 

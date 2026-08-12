@@ -1,4 +1,4 @@
-import storyImage from "@/assets/story.jpg";
+import storyImage from "@/assets/chuchu.jpg";
 import {
   CircleDotDashed,
   Flower2,
@@ -164,13 +164,13 @@ const CardFront = () => (
           </p>
 
           <p className="mt-1 font-serif text-lg text-white sm:text-xl">
-            Quang Vinh &amp; Diem Linh
+            Quang Vinh &amp; Diễm Linh
           </p>
         </div>
 
         <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/30 bg-white/85 px-3 py-2 text-[10px] font-semibold text-[#721527] shadow-lg backdrop-blur sm:text-xs">
           <MousePointerClick className="size-3.5" />
-          <span>Tap to flip</span>
+          <span>Nhấn Vào Để xem</span>
         </div>
       </div>
     </div>

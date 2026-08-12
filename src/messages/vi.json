@@ -1,16 +1,16 @@
 {
-    "mainTitle": "Chúng tôi chuẩn bị kết hôn",
-    "description": "Mời bạn cùng chúng tôi viết tiếp chương đẹp nhất của cuộc đời. Sự hiện diện của bạn là món quà vô giá dành cho chúng tôi.",
+    "mainTitle": "CHÚNG MÌNH SẮP VỀ CHUNG MỘT NHÀ ",
+    "description": "Một hành trình đã đi qua những tháng năm đẹp nhất, để hôm nay bắt đầu một chương mới mang tên “\nchúng ta\n”. Sẽ thật hạnh phúc khi khoảnh khắc ấy được sẻ chia và lưu giữ cùng nhau. ",
     "sendMessages": "Gửi Lời Chúc",
     "mailNotification": "Bạn có 1 thiệp mời chưa xem! 🎉",
     "ourStory": {
-        "title": "Câu chuyện của chúng tôi",
-        "description": "Từ những người bạn chung trường, đến những người yêu, và giờ là bạn đời của nhau.",
+        "title": "TỪ NGÀY ẤY ĐẾN HÔM NAY",
+        "description": "Chẳng nhớ từ lúc nào, hai đứa cứ thế có mặt trong những năm tháng của nhau.",
 
         "story1": {
-            "title": "Câu chuyện của chúng tôi",
-            "content": "Chúng tôi gặp nhau hồi cấp 3, trong một lớp học thêm Toán. Ban đầu, hai đứa chỉ định đến để tìm x, ai ngờ Vinh vừa nhìn thấy Linh đã tìm được luôn “đáp án của đời mình”.",
-            "subContent": "Từ hai cô cậu học trò từng đau đầu vì phương trình, chúng tôi đã cùng nhau vượt qua nhiều “bài toán khó” của cuộc sống. Sau một thập kỷ, Vinh quyết định đưa ra đáp án cuối cùng bằng một lời cầu hôn. Linh đồng ý, bởi sau ngần ấy năm, hai đứa đều hiểu rằng: ",
+            "title": "MỌI CHUYỆN BẮT ĐẦU TỪ…",
+            "content": "Chúng mình gặp nhau hồi cấp 3, trong một lớp học thêm Toán. Ban đầu, hai đứa chỉ định đến để tìm x, ai ngờ Vinh vừa nhìn thấy Linh đã tìm được luôn “đáp án của đời mình”.",
+            "subContent": "Từ hai cô cậu học trò từng đau đầu vì phương trình, chúng mình đã cùng nhau vượt qua nhiều “bài toán khó” của cuộc sống. Sau một thập kỷ, Vinh quyết định đưa ra đáp án cuối cùng bằng một lời cầu hôn. Linh đồng ý, bởi sau ngần ấy năm, hai đứa đều hiểu rằng: ",
             "highlight": "\"Toán có thể sai, nhưng chọn nhau thì chắc chắn đúng.\""
         },
 
@@ -21,12 +21,12 @@
             "subContent2": "Nghe xong, Linh bĩu môi chê ỏng chê eo, dõng dạc tuyên bố: ",
             "subContent3": "À, cái thằng Vinh học cùng trường đó mẹ. Trông cái mặt ghét dễ sợ, có cho vàng con cũng không thèm!",
             "subContent4": ". Thế nhưng Linh đâu biết rằng, thanh niên \"tóc xoăn đòi nợ\" hôm ấy lượn lờ với mục đích vô cùng rõ ràng: cưa đổ bằng được con gái cưng của mẹ.",
-            "subContent5": "Đúng là ông bà ta nói cấm có sai: \"Ghét của nào  trời trao của đó\". Mà ở đây là trời ép nhận luôn nguyên combo \"đen đen, xoăn xoăn\" cộng thêm chiếc Sirius!"
+            "subContent5": "Đúng là ông bà ta nói cấm có sai: \"Ghét của nào  trời trao của đó\". Mà ở đây là trời ép nhận luôn nguyên combo \"cái mặt thấy ghét, đen đen, xoăn xoăn\"!"
         },
 
         "card": {
-            "title": " \"Bên nhau\" là nơi chúng mình yêu thích nhất.",
-            "content": "Mỗi chương của cuộc đời đều trở nên đẹp đẽ hơn khi được viết cùng nhau."
+            "title": "Đi cùng nhau thật lâu có lẽ là điều đẹp nhất mà hai đứa đã làm được.",
+            "content": "Đến hôm nay, mỗi chặng đường đều đáng nhớ vì luôn có nhau đồng hành."
         }
     },
 
@@ -46,7 +46,7 @@
             "description": "Bữa cơm thân mật mở đầu cho ngày vui, đánh dấu sự gắn kết chính thức giữa hai bên gia đình."
         },
         "Ceremony": {
-            "title": "Thánh Lễ Hôn Phối",
+            "title": "Thánh lễ Hôn phối",
             "description": "Trong không gian trang nghiêm và thiêng liêng, cô dâu chú rể cử hành nghi thức hôn phối và trao lời thề nguyện trước Thiên Chúa."
         },
         "Drink & Dinner": {
@@ -54,13 +54,13 @@
             "description": "Buổi tiệc chúc mừng ngày thành hôn, nơi cô dâu chú rể đón tiếp quan khách và ghi dấu khoảnh khắc khởi đầu cho hành trình hôn nhân."
         },
         "thankYou": {
-            "title": "Lời cảm ơn",
-            "description": "Chúng tôi xin gửi lời cảm ơn chân thành đến tất cả những người đã tham dự và chúc phúc cho chúng tôi trong ngày trọng đại này."
+            "title": "Lễ rước dâu",
+            "description": "Đến giờ “đón nàng về dinh” - Cô dâu chú rể cùng gia đình thực hiện nghi thức rước dâu, chính thức về chung một nhà."
         }
     },
 
     "Moments": {
-        "title": "Kỷ niệm & Khoảnh khắc",
+        "title": "DẤU ẤN",
         "description": "Một bộ sưu tập những kỷ niệm quý giá và những khoảnh khắc không thể quên từ hành trình của chúng tôi."
     }
 }

@@ -27,7 +27,7 @@ const Story = () => {
   return (
     <section
       id="story"
-      className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#fffdf9_0%,#fbf6ee_50%,#fffdf9_100%)] px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28"
+      className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#fffdf9_0%,#fbf6ee_50%,#fffdf9_100%)] px-4 py-8 sm:px-6 sm:py-10 md:py-16 lg:px-8 lg:py-20"
     >
       <WeddingDecorations />
 

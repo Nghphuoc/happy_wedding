@@ -1,6 +1,6 @@
 "use client";
 
-import look from "@/assets/look.jpg";
+import muoi from "@/assets/muoi.jpg";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { montserrat, playfair } from "@/utils/Fonts";
 import {
@@ -183,7 +183,7 @@ const EventImage = ({
     >
       <div className="group relative aspect-4/5 overflow-hidden rounded-[1.35rem]">
         <Image
-          src={look}
+          src={muoi}
           alt="Wedding event portrait"
           fill
           sizes="(max-width: 640px) 88vw,
@@ -216,7 +216,7 @@ const EventImage = ({
           <p
             className={`${playfair.className} mt-1 text-2xl sm:text-3xl`}
           >
-            Quang Vinh &amp; Diem Linh
+            Quang Vinh &amp; Diễm Linh
           </p>
         </figcaption>
       </div>
@@ -359,7 +359,7 @@ export default function Events() {
   return (
     <section
       id="events"
-      className={`${montserrat.className} relative isolate overflow-hidden bg-[linear-gradient(180deg,#fffdf9_0%,#fbf6ee_50%,#fffdf9_100%)] px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28`}
+      className={`${montserrat.className} relative isolate overflow-hidden bg-[linear-gradient(180deg,#fffdf9_0%,#fbf6ee_50%,#fffdf9_100%)] px-4 pb-8 sm:px-6 sm:pb-10 md:pb-16 lg:px-8 lg:pb-20`}
     >
       <BackgroundDecorations />
 

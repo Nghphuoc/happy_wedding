@@ -5,6 +5,7 @@ import Events from "@/components/Events";
 import WeddingLocations from "@/components/WeddingLocations";
 import Gallery from "@/components/Gallery";
 import FloatingInvitation from "@/components/FloatingInvitation";
+import QuestionGamme from "@/components/QuestionGamme";
 
 
 export default function WeddingPage() {
@@ -17,6 +18,7 @@ export default function WeddingPage() {
             <Gallery />
             <WeddingLocations />
             <FloatingInvitation />
+            <QuestionGamme />
         </div>
     );
 }

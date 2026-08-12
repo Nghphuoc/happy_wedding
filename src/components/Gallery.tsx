@@ -11,23 +11,13 @@ import {
 
 import { Divider } from "@/utils/flower";
 import { useTranslation } from "@/contexts/TranslationContext";
-import image2 from "@/assets/blackCouple.jpg";
-import gun from "@/assets/gun.jpg";
-import bring from "@/assets/bring.jpg";
-import story from "@/assets/story.jpg";
+import blackCouple from "@/assets/blackCouple.jpg";
+import danceSingInTheDark from "@/assets/danceSingInTheDark.jpg";
+import kiss from "@/assets/kiss.jpg";
 import singleDad from "@/assets/singleDad.jpg";
 import goodGirl from "@/assets/goodGirl.jpg";
-import double from "@/assets/double.jpg";
-import alone from "@/assets/alone.jpg";
-import smiley from "@/assets/smiley.jpg";
-import chuchu from "@/assets/chuchu.jpg";
-import look from "@/assets/look.jpg";
-import women from "@/assets/women.jpg";
-import muoi from "@/assets/muoi.jpg";
-import dance from "@/assets/dance.jpg";
 import walk from "@/assets/walk.jpg";
-import noName from "@/assets/noName.jpg";
-import yesido from "@/assets/yesido.jpg";
+
 import { playfair } from "@/utils/Fonts";
 
 interface GalleryItem {
@@ -39,105 +29,39 @@ interface GalleryItem {
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
-    src: image2,
-    alt: "Quang Vinh and Diem Linh walking together",
-    caption: "A beautiful beginning",
+    src: singleDad,
+    alt: "Waiting for You",
+    caption: "Waiting for You",
     rotation: "-rotate-2",
   },
   {
-    src: yesido,
-    alt: "Yesido couple",
-    caption: "Yesido couple",
+    src: goodGirl,
+    alt: "On My Way",
+    caption: "On My Way",
     rotation: "rotate-1",
   },
   {
-    src: gun,
-    alt: "Joyful bridal portrait",
-    caption: "Moments of happiness",
+    src: walk,
+    alt: "Take My Hand ",
+    caption: "Take My Hand",
     rotation: "-rotate-1",
   },
   {
-    src: bring,
+    src: blackCouple,
     alt: "Wedding stationery with a wax seal",
     caption: "Written with love",
     rotation: "rotate-2",
   },
   {
-    src: story,
-    alt: "Wedding portrait of the couple",
-    caption: "Our favorite memory",
+    src: danceSingInTheDark,
+    alt: "By Your Side",
+    caption: "By Your Side",
     rotation: "-rotate-2",
   },
   {
-    src: singleDad,
-    alt: "Single father with his daughter",
-    caption: "A special bond",
-    rotation: "rotate-1",
-  },
-  {
-    src: goodGirl,
-    alt: "Bride and groom sharing a dance",
-    caption: "Dancing through life",
-    rotation: "-rotate-1",
-  },
-  {
-    src: double,
-    alt: "Couple holding hands with a scenic background",
-    caption: "Together, always",
-    rotation: "rotate-2",
-  },
-  {
-    src: alone,
-    alt: "Bride and groom in a quiet moment",
-    caption: "A moment of reflection",
-    rotation: "-rotate-2",
-  },
-  {
-    src: smiley,
-    alt: "Couple laughing together",
-    caption: "Laughter and love",
-    rotation: "rotate-1",
-  },
-  {
-    src: chuchu,
-    alt: "Couple enjoying a playful moment",
-    caption: "Playful hearts",
-    rotation: "-rotate-1",
-  },
-  {
-    src: look,
-    alt: "Couple gazing into each other's eyes",
-    caption: "A look that says it all",
-    rotation: "rotate-2",
-  },
-  {
-    src: women,
-    alt: "Bride and groom in a romantic moment",
-    caption: "A moment of romance",
-    rotation: "-rotate-2",
-  },
-  {
-    src: muoi,
-    alt: "Couple walking hand in hand",
-    caption: "Walking into the future",
-    rotation: "rotate-1",
-  },
-  {
-    src: dance,
-    alt: "Couple dancing under the stars",
-    caption: "Dancing under the stars",
-    rotation: "-rotate-1",
-  },
-  {
-    src: walk,
-    alt: "Couple walking along the beach",
-    caption: "A walk to remember",
-    rotation: "rotate-2",
-  },
-  {
-    src: noName,
-    alt: "Couple sharing a quiet moment together",
-    caption: "A quiet moment",
+    src: kiss,
+    alt: "Always Us",
+    caption: "Always Us",
     rotation: "-rotate-2",
   },
 ];
@@ -194,7 +118,7 @@ const Gallery = () => {
   return (
     <section
       id="gallery"
-      className="relative overflow-hidden px-5 py-20 sm:px-8 md:py-24 lg:px-10"
+      className="relative overflow-hidden px-5 py-10 sm:px-8 md:py-20 lg:px-10"
     >
       <div
         aria-hidden="true"
@@ -209,11 +133,11 @@ const Gallery = () => {
       <div className="relative mx-auto max-w-7xl">
         <header className="mb-10 text-center md:mb-14">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#9a671d]">
-            Our memories
+            OUR MOMENTS
           </p>
 
           <h2
-            className={`${playfair.className} text-4xl text-[#721527] md:text-5xl`}
+            className={`${playfair.className} font-semibold text-3xl text-[#721527] md:text-5xl`}
           >
             {t("Moments.title")}
           </h2>

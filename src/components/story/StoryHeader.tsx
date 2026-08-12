@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 
 import { revealTransition } from "./constants";
 import { SectionDivider } from "./shared-elements";
+import { montserrat, playfair } from "@/utils/Fonts";
 
 type StoryHeaderProps = {
   title: string;
@@ -40,7 +41,7 @@ export const StoryHeader = ({
       Our journey
     </p>
 
-    <h2 className="font-serif text-3xl font-semibold leading-tight text-[#721527] sm:text-4xl lg:text-5xl">
+    <h2 className={`text-3xl font-semibold leading-tight text-[#721527] sm:text-4xl lg:text-5xl ${playfair.className}`}>
       {title}
     </h2>
 
@@ -48,7 +49,7 @@ export const StoryHeader = ({
       <SectionDivider />
     </div>
 
-    <p className="mx-auto max-w-xl text-sm leading-7 text-[#665455] sm:text-base">
+    <p className={`mx-auto max-w-xl text-sm leading-7 text-[#665455] sm:text-base ${montserrat.className}`}>
       {description}
     </p>
   </motion.header>
