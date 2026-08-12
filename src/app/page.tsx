@@ -16,9 +16,9 @@ export default function WeddingPage() {
             <Story />
             <Events />
             <Gallery />
+            <QuestionGamme />
             <WeddingLocations />
             <FloatingInvitation />
-            <QuestionGamme />
         </div>
     );
 }
