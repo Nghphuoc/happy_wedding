@@ -7,10 +7,16 @@ import { montserrat } from "@/utils/Fonts";
 interface CardDetailsProps {
     visible: boolean;
     onClose: (e: React.MouseEvent) => void;
+    onBlessingOpenChange: (isOpen: boolean) => void;
     checkLocation?: boolean;
 }
 
-export function CardDetails({ visible, onClose, checkLocation }: CardDetailsProps) {
+export function CardDetails({
+    visible,
+    onClose,
+    onBlessingOpenChange,
+    checkLocation,
+}: CardDetailsProps) {
     const { timeline, date_female, date_male, venue, address_male, address_female } = WEDDING;
 
     return (
@@ -37,7 +43,7 @@ export function CardDetails({ visible, onClose, checkLocation }: CardDetailsProp
                     items={timeline as unknown as { time: string; label: string }[]}
                 />
 
-                <QRSection />
+                <QRSection onOpenChange={onBlessingOpenChange} />
 
             </div>
 

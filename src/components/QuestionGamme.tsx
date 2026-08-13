@@ -27,11 +27,11 @@ const QUESTIONS: Question[] = [
     answers: [
       {
         label: "Chú rể",
-        response: "Sai rồi, người kia yêu nhiều hơn.",
+        response: "Đúng! Cái này mình nhất quyết không nhường.",
       },
       {
         label: "Cô dâu",
-        response: "Sai rồi, người kia yêu nhiều hơn.",
+        response: "Là tui, là tui, là tui !!!",
       },
     ],
   },
@@ -106,17 +106,17 @@ const CoupleQuestionGame = () => {
   return (
     <section
       id="couple-question-game"
-      className={`${montserrat.className} relative isolate overflow-hidden bg-[linear-gradient(145deg,#3d0c18_0%,#721527_50%,#4a0e1d_100%)] px-4 py-16 sm:px-6 sm:py-20 md:py-24 lg:px-8 lg:py-28`}
+      className={`${montserrat.className} relative isolate overflow-hidden bg-[linear-gradient(145deg,#3d0c18_0%,#721527_50%,#4a0e1d_100%)] px-4 py-14 sm:px-6 sm:py-16 md:py-20 lg:px-8 lg:py-24`}
     >
       <BackgroundDecorations />
 
-      <div className="relative mx-auto max-w-3xl">
+      <div className="relative mx-auto max-w-2xl">
         <motion.header
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8, ease: EASE_OUT }}
-          className="mx-auto mb-10 max-w-2xl text-center md:mb-12"
+          className="mx-auto mb-8 max-w-xl text-center md:mb-10"
         >
           <motion.div
             initial={
@@ -131,31 +131,31 @@ const CoupleQuestionGame = () => {
               stiffness: 170,
               damping: 15,
             }}
-            className="mx-auto mb-5 grid size-14 place-items-center rounded-full border border-[#e2bc73]/40 bg-white/10 text-[#f1d599] shadow-[0_12px_35px_rgba(0,0,0,0.18)] backdrop-blur"
+            className="mx-auto mb-4 grid size-12 place-items-center rounded-full border border-[#e2bc73]/35 bg-white/10 text-[#f1d599] shadow-[0_10px_28px_rgba(0,0,0,0.16)] backdrop-blur"
           >
-            <Heart className="size-6 fill-[#f1d599]/10" />
+            <Heart className="size-5 fill-[#f1d599]/10" />
           </motion.div>
 
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#e2bc73]">
+          <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#e2bc73] sm:text-xs">
             Wedding mini game
           </p>
 
           <h2
-            className={`${playfair.className} text-3xl font-semibold leading-tight text-[#fffaf2] sm:text-4xl lg:text-5xl`}
+            className={`${playfair.className} text-2xl font-semibold leading-tight text-[#fffaf2] sm:text-3xl lg:text-4xl`}
           >
             Ai Mới Là Người...?
           </h2>
 
           <div
             aria-hidden="true"
-            className="my-5 flex items-center justify-center gap-3"
+            className="my-4 flex items-center justify-center gap-3"
           >
-            <span className="h-px w-12 bg-linear-to-r from-transparent to-[#e2bc73]" />
-            <Sparkles className="size-4 text-[#e2bc73]" />
-            <span className="h-px w-12 bg-linear-to-l from-transparent to-[#e2bc73]" />
+            <span className="h-px w-10 bg-linear-to-r from-transparent to-[#e2bc73]" />
+            <Sparkles className="size-3.5 text-[#e2bc73]" />
+            <span className="h-px w-10 bg-linear-to-l from-transparent to-[#e2bc73]" />
           </div>
 
-          <p className="mx-auto max-w-xl text-sm leading-7 text-white/65 sm:text-base sm:leading-8">
+          <p className="mx-auto max-w-lg text-xs leading-6 text-white/65 sm:text-sm sm:leading-7">
             Chọn theo trực giác của bạn nhé. Nhưng nhớ là trong chuyện tình
             này, đáp án đôi khi không quan trọng bằng phản ứng của cặp đôi đâu.
           </p>
@@ -192,18 +192,18 @@ const CoupleQuestionGame = () => {
                 duration: 0.45,
                 ease: EASE_OUT,
               }}
-              className="overflow-hidden rounded-4xl border border-white/15 bg-white/[0.07] shadow-[0_30px_90px_rgba(0,0,0,0.28)] backdrop-blur-xl"
+              className="overflow-hidden rounded-2xl border border-white/12 bg-white/6.5 shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl"
             >
-              <div className="border-b border-white/10 px-6 py-5 sm:px-8">
+              <div className="border-b border-white/10 px-5 py-4 sm:px-6">
                 <div className="mb-3 flex items-center justify-between gap-4">
-                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#e2bc73]">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#e2bc73] sm:text-xs">
                     Câu {currentQuestion + 1} / {QUESTIONS.length}
                   </span>
 
-                  <span className="text-xs text-white/45">Chọn 1 người</span>
+                  <span className="text-[10px] text-white/45 sm:text-xs">Chọn 1 người</span>
                 </div>
 
-                <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
+                <div className="h-1 overflow-hidden rounded-full bg-white/10">
                   <motion.div
                     initial={false}
                     animate={{
@@ -218,7 +218,7 @@ const CoupleQuestionGame = () => {
                 </div>
               </div>
 
-              <div className="p-6 sm:p-8 lg:p-10">
+              <div className="p-5 sm:p-6 lg:p-7">
                 <motion.div
                   initial={
                     reduceMotion
@@ -236,20 +236,20 @@ const CoupleQuestionGame = () => {
                     duration: 0.45,
                     delay: 0.05,
                   }}
-                  className="mb-8 text-center"
+                  className="mb-6 text-center"
                 >
-                  <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
+                  <span className="mb-2.5 inline-block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40 sm:text-xs">
                     Theo bạn thì...
                   </span>
 
                   <h3
-                    className={`${playfair.className} text-2xl font-semibold leading-snug text-[#fffaf2] sm:text-3xl md:text-4xl`}
+                    className={`${playfair.className} text-xl font-semibold leading-snug text-[#fffaf2] sm:text-2xl md:text-3xl`}
                   >
                     {question.question}
                   </h3>
                 </motion.div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-3 sm:grid-cols-2">
                   {question.answers.map((answer, index) => {
                     const selected = selectedAnswer === index;
 
@@ -277,7 +277,7 @@ const CoupleQuestionGame = () => {
                         transition={{
                           duration: 0.25,
                         }}
-                        className={`group relative min-h-36 overflow-hidden rounded-3xl border px-6 py-6 text-center transition-all duration-300 ${
+                        className={`group relative min-h-28 overflow-hidden rounded-2xl border px-4 py-5 text-center transition-all duration-300 sm:min-h-32 sm:px-5 ${
                           selected
                             ? "border-[#e2bc73] bg-[#e2bc73]/15 text-[#fffaf2] shadow-[0_18px_50px_rgba(226,188,115,0.12)]"
                             : isAnswered
@@ -287,28 +287,28 @@ const CoupleQuestionGame = () => {
                       >
                         <div
                           aria-hidden="true"
-                          className={`absolute -right-10 -top-10 size-28 rounded-full border transition-transform duration-500 group-hover:scale-110 ${
+                          className={`absolute -right-10 -top-10 size-24 rounded-full border transition-transform duration-500 group-hover:scale-110 ${
                             selected ? "border-[#e2bc73]/30" : "border-white/10"
                           }`}
                         />
 
                         <div className="relative z-10">
                           <div
-                            className={`mx-auto mb-4 grid size-12 place-items-center rounded-full border transition-all duration-300 ${
+                            className={`mx-auto mb-3 grid size-10 place-items-center rounded-full border transition-all duration-300 sm:size-11 ${
                               selected
                                 ? "border-[#e2bc73]/50 bg-[#721527] text-[#f1d599]"
                                 : "border-white/15 bg-white/6 text-white/45 group-hover:border-[#e2bc73]/40 group-hover:text-[#e2bc73]"
                             }`}
                           >
                             <Heart
-                              className={`size-5 ${
+                              className={`size-4 ${
                                 selected ? "fill-[#e2bc73]/20" : ""
                               }`}
                             />
                           </div>
 
                           <span
-                            className={`${playfair.className} text-2xl font-semibold sm:text-3xl`}
+                            className={`${playfair.className} text-xl font-semibold sm:text-2xl`}
                           >
                             {answer.label}
                           </span>
@@ -343,21 +343,21 @@ const CoupleQuestionGame = () => {
                         duration: 0.4,
                         ease: EASE_OUT,
                       }}
-                      className="mt-7 overflow-hidden rounded-2xl border border-[#e2bc73]/20 bg-[#25070e]/30"
+                      className="mt-5 overflow-hidden rounded-2xl border border-[#e2bc73]/20 bg-[#25070e]/30"
                     >
-                      <div className="px-5 py-6 text-center sm:px-8">
+                      <div className="px-5 py-5 text-center sm:px-6">
                         <div className="mx-auto mb-3 flex w-fit items-center gap-2 text-[#e2bc73]">
-                          <Sparkles className="size-4" />
+                          <Sparkles className="size-3.5" />
 
-                          <span className="text-xs font-semibold uppercase tracking-[0.22em]">
+                          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] sm:text-xs">
                             Cặp đôi nói rằng
                           </span>
 
-                          <Sparkles className="size-4" />
+                          <Sparkles className="size-3.5" />
                         </div>
 
                         <p
-                          className={`${playfair.className} text-xl font-semibold leading-relaxed text-[#fffaf2] sm:text-2xl`}
+                          className={`${playfair.className} text-lg font-semibold leading-relaxed text-[#fffaf2] sm:text-xl`}
                         >
                           “{selectedResponse}”
                         </p>
@@ -385,12 +385,12 @@ const CoupleQuestionGame = () => {
                         duration: 0.35,
                         delay: 0.1,
                       }}
-                      className="mt-7 flex justify-center"
+                      className="mt-5 flex justify-center"
                     >
                       <button
                         type="button"
                         onClick={handleNext}
-                        className={`${montserrat.className} group inline-flex items-center gap-2 rounded-full bg-[#fffaf2] px-6 py-3 text-sm font-semibold text-[#721527] shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_16px_38px_rgba(0,0,0,0.24)] active:scale-[0.98]`}
+                        className={`${montserrat.className} group inline-flex items-center gap-2 rounded-full bg-[#fffaf2] px-5 py-2.5 text-xs font-semibold text-[#721527] shadow-[0_10px_24px_rgba(0,0,0,0.16)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_14px_32px_rgba(0,0,0,0.22)] active:scale-[0.98] sm:text-sm`}
                       >
                         {currentQuestion === QUESTIONS.length - 1
                           ? "Xem lời kết"
@@ -424,7 +424,7 @@ const CoupleQuestionGame = () => {
                 duration: 0.55,
                 ease: EASE_OUT,
               }}
-              className="relative overflow-hidden rounded-4xl border border-[#e2bc73]/35 bg-[#fffaf2] px-6 py-10 text-center shadow-[0_30px_90px_rgba(0,0,0,0.3)] sm:px-10 sm:py-14"
+              className="relative overflow-hidden rounded-2xl border border-[#e2bc73]/35 bg-[#fffaf2] px-5 py-9 text-center shadow-[0_24px_70px_rgba(0,0,0,0.26)] sm:px-8 sm:py-12"
             >
               <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-[#e2bc73]/15 to-transparent" />
 
@@ -457,39 +457,39 @@ const CoupleQuestionGame = () => {
                   damping: 14,
                   delay: 0.1,
                 }}
-                className="relative mx-auto mb-6 grid size-20 place-items-center rounded-full bg-[#721527] text-[#fffaf2] shadow-[0_16px_35px_rgba(114,21,39,0.28)]"
+                className="relative mx-auto mb-5 grid size-16 place-items-center rounded-full bg-[#721527] text-[#fffaf2] shadow-[0_14px_30px_rgba(114,21,39,0.24)]"
               >
-                <Heart className="size-9 fill-[#e2bc73]/20 text-[#e2bc73]" />
+                <Heart className="size-7 fill-[#e2bc73]/20 text-[#e2bc73]" />
               </motion.div>
 
               <div className="relative">
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#9a671d]">
+                <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#9a671d] sm:text-xs">
                   Hết game rồi
                 </p>
 
                 <h3
-                  className={`${playfair.className} mx-auto mb-5 max-w-xl text-3xl font-semibold leading-tight text-[#721527] sm:text-4xl`}
+                  className={`${playfair.className} mx-auto mb-4 max-w-lg text-2xl font-semibold leading-tight text-[#721527] sm:text-3xl`}
                 >
                   Bạn đã hiểu luật trong gia đình này chưa?
                 </h3>
 
                 <div
                   aria-hidden="true"
-                  className="mx-auto mb-5 flex items-center justify-center gap-3"
+                  className="mx-auto mb-4 flex items-center justify-center gap-3"
                 >
                   <span className="h-px w-12 bg-[#dca54c]/40" />
-                  <Sparkles className="size-4 text-[#9a671d]" />
+                  <Sparkles className="size-3.5 text-[#9a671d]" />
                   <span className="h-px w-12 bg-[#dca54c]/40" />
                 </div>
 
-                <p className="mx-auto max-w-lg text-sm leading-7 text-[#705b5e] sm:text-base sm:leading-8">
+                <p className="mx-auto max-w-md text-xs leading-6 text-[#705b5e] sm:text-sm sm:leading-7">
                   Đúng hay sai không quan trọng. Quan trọng là sau vài câu
                   hỏi, chắc bạn cũng đã phần nào hiểu được cách vận hành
                   của gia đình nhỏ này rồi đó.
                 </p>
 
                 <p
-                  className={`${playfair.className} mt-4 text-xl italic text-[#721527]`}
+                  className={`${playfair.className} mt-4 text-lg italic text-[#721527] sm:text-xl`}
                 >
                   Tóm lại là... yêu nhau là được. 🤍
                 </p>
@@ -497,7 +497,7 @@ const CoupleQuestionGame = () => {
                 <button
                   type="button"
                   onClick={handleRestart}
-                  className={`${montserrat.className} mt-8 inline-flex items-center gap-2 rounded-full bg-[#721527] px-6 py-3 text-sm font-semibold text-[#fffaf2] shadow-[0_12px_28px_rgba(114,21,39,0.22)] transition-all duration-300 hover:scale-[1.03] hover:bg-[#861a30] active:scale-[0.98]`}
+                  className={`${montserrat.className} mt-7 inline-flex items-center gap-2 rounded-full bg-[#721527] px-5 py-2.5 text-xs font-semibold text-[#fffaf2] shadow-[0_10px_24px_rgba(114,21,39,0.2)] transition-all duration-300 hover:scale-[1.03] hover:bg-[#861a30] active:scale-[0.98] sm:text-sm`}
                 >
                   <RotateCcw className="size-4" />
                   Chơi lại
@@ -526,7 +526,7 @@ const CoupleQuestionGame = () => {
               delay: 0.5,
               duration: 0.6,
             }}
-            className={`${montserrat.className} mt-7 text-center text-xs leading-6 text-white/40`}
+            className={`${montserrat.className} mt-6 text-center text-[11px] leading-5 text-white/40 sm:text-xs sm:leading-6`}
           >
             Không được quay sang hỏi cô dâu hoặc chú rể trước khi chọn nha 👀
           </motion.p>

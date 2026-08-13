@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type MouseEvent,
+  type SyntheticEvent,
+} from "react";
 import { useSearchParams } from "next/navigation";
 import {
   Check,
@@ -115,23 +122,50 @@ const SendBlessing = ({ isOpen, onClose }: SendBlessingProps) => {
     onClose();
   };
 
+  const stopUnderlyingCardAction = (event: SyntheticEvent) => {
+    event.stopPropagation();
+  };
+
+  const handleBackdropMouseDown = (
+    event: MouseEvent<HTMLDivElement>
+  ) => {
+    event.stopPropagation();
+
+    if (event.target === event.currentTarget) {
+      handleClose();
+    }
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          data-ignore-card-action
           role="presentation"
           className="fixed inset-0 z-100 flex items-center justify-center overflow-y-auto bg-[#241316]/70 p-3 backdrop-blur-md sm:p-6"
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onMouseDown={handleClose}
+          onPointerDown={stopUnderlyingCardAction}
+          onPointerUp={stopUnderlyingCardAction}
+          onMouseDown={handleBackdropMouseDown}
+          onMouseUp={stopUnderlyingCardAction}
+          onTouchStart={stopUnderlyingCardAction}
+          onTouchEnd={stopUnderlyingCardAction}
+          onClick={stopUnderlyingCardAction}
         >
           <motion.div
             role="dialog"
             aria-modal="true"
             aria-labelledby="blessing-form-title"
             aria-describedby="blessing-form-description"
-            onMouseDown={(event) => event.stopPropagation()}
+            onPointerDown={stopUnderlyingCardAction}
+            onPointerUp={stopUnderlyingCardAction}
+            onMouseDown={stopUnderlyingCardAction}
+            onMouseUp={stopUnderlyingCardAction}
+            onTouchStart={stopUnderlyingCardAction}
+            onTouchEnd={stopUnderlyingCardAction}
+            onClick={stopUnderlyingCardAction}
             initial={
               reduceMotion
                 ? false

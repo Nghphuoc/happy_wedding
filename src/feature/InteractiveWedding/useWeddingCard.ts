@@ -1,6 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 
-export function useWeddingCard(isOpen: boolean, onClose: () => void) {
+export function useWeddingCard(
+    isOpen: boolean,
+    onClose: () => void,
+    isInteractionLocked = false
+) {
     const [step, setStep] = useState(0);
 
     useEffect(() => {
@@ -12,11 +16,11 @@ export function useWeddingCard(isOpen: boolean, onClose: () => void) {
     useEffect(() => {
         if (!isOpen) return;
         const handler = (e: KeyboardEvent) => {
-            if (e.key === "Escape") onClose();
+            if (e.key === "Escape" && !isInteractionLocked) onClose();
         };
         window.addEventListener("keydown", handler);
         return () => window.removeEventListener("keydown", handler);
-    }, [isOpen, onClose]);
+    }, [isOpen, isInteractionLocked, onClose]);
 
     useEffect(() => {
         document.body.style.overflow = isOpen ? "hidden" : "";

@@ -1,67 +1,60 @@
 {
-    "mainTitle": "We are getting married",
-    "description": "Join us in writing the most beautiful chapter of our lives. Your presence is the most precious gift we could ever receive.",
-    "sendMessages": "Send Messages",
+    "mainTitle": "We're Getting Married",
+    "description": "A journey through our most beautiful years has led us to begin a new chapter called \"us\" today. It would be a joy to share and cherish this moment together.",
+    "sendMessages": "Send Wishes",
     "mailNotification": "You have 1 unread invitation! 🎉",
     "ourStory": {
-        "title": "Our Story",
-        "description": "From being classmates, to being lovers, and now inseparable partners.",
-
+        "title": "FROM THEN UNTIL NOW",
+        "description": "Somehow, at some point, we began appearing in each other's lives.",
         "story1": {
-            "title": "Our Story",
-            "content": "We met in high school during a math tutoring class. At first, we both just intended to “solve for x,” but the moment Vinh laid eyes on Linh, he found the “answer to his life.” ",
-            "subContent": "From two students once stumped by equations, we have navigated life’s many “tough problems” together. After a decade, Vinh decided to provide the final answer with a marriage proposal. Linh said yes, for after all those years, both understood: ",
-            "highlight": "\nMath might be wrong, but choosing each other is undeniably right.\n"
-
+            "title": "EVERYTHING STARTED FROM…",
+            "content": "We met in high school in a supplementary math class. At first we went to find x, but when Vinh saw Linh he unexpectedly found the 'answer to his life'.",
+            "subContent": "From two students who once struggled with equations, we have since faced many of life's tough 'problems' together. After a decade, Vinh offered the final answer with a marriage proposal. Linh said yes, because after all those years we both understood that:",
+            "highlight": "\"Math can be wrong, but choosing each other is surely right.\""
         },
-
         "story2": {
-            "title": "The Untold Story",
-            "content": "Linh's mother once told a story about a young man riding a \"cà tàng\" Sirius, wandering around the gate for several laps. Mother found it suspicious and turned to ask: ",
-            "subContent": "Hey Linh, which guy is riding that Sirius, with dark skin, curly hair like instant noodles, always peering at our house like he's collecting debts?",
-            "subContent2": "After hearing this, Linh pouted and complained: ",
-            "subContent3": "Oh, that guy named Vinh from our school. He looks so hateful, even if you give him gold, he won't take it!",
-            "subContent4": ". But Linh didn't know that the young man \"curly-haired debt collector\" that day was wandering around with a very clear purpose: to win over his beloved daughter.",
-            "subContent5": "As our grandparents said, \"What you hate is what heaven gives you.\" And here it was heaven forcing us to accept the whole package of \"dark skin, curly hair\" plus that Sirius!"
+            "title": "Untold Story",
+            "content": "Linh's mother once told a story: one afternoon a young man on a shabby Sirius motorcycle kept circling and revving in front of the gate. Suspicious, she turned and asked:",
+            "subContent": "Hey Linh, who's that on the Sirius — dark-skinned, hair curled like instant noodles, staring at our house like he's collecting a debt?",
+            "subContent2": "Hearing that, Linh scoffed and proudly declared:",
+            "subContent3": "Oh, that's Vinh from my school, Mom. He looks so annoying, I wouldn't even take his gold!",
+            "subContent4": "But Linh didn't know that the 'curly-haired debt collector' was circling with a very clear intention: to win over Mom's beloved daughter.",
+            "subContent5": "As the elders say: 'You hate what heaven gives you.' In our case, heaven insisted on the full package: 'an annoying face, dark skin, and curly hair'!"
         },
-
         "card": {
-            "title": " \"Being together\" is our favorite place to be.",
-            "content": "Every chapter of life becomes more beautiful when written together."
+            "title": "Walking together for a long time may be the most beautiful thing we've done.",
+            "content": "To this day, every chapter is memorable because we always have each other."
         }
     },
-
     "navigation": {
         "home": "Home",
         "Story": "Story",
         "Gallery": "Gallery",
         "Events": "Events",
-        "Invitationcard": "Invitation card",
+        "Invitationcard": "Invitation",
         "Blessings": "Blessings"
     },
-
     "events": {
-        "title": "Wedding & Events",
+        "title": "Events & Wedding",
         "Photography": {
-            "title": "Pre-wedding family gathering/party",
-            "description": "A warm and intimate dinner that marks the beginning of your special day, symbolizing the official bonding between both families."
+            "title": "Family Gathering",
+            "description": "An intimate meal to begin the celebration, marking the formal joining of both families."
         },
         "Ceremony": {
-            "title": "Nuptial Mass",
-            "description": "In a solemn and sacred space, the bride and groom perform the marriage ceremony and exchange vows before God."
+            "title": "Wedding Mass",
+            "description": "In a solemn and sacred setting, the bride and groom perform the marriage rite and exchange vows before God."
         },
         "Drink & Dinner": {
             "title": "Wedding Reception",
-            "description": "A delightful evening of drinks and dinner, bringing family and friends together to celebrate the happy couple."
+            "description": "A celebratory banquet where the couple welcomes guests and marks the beginning of their married life."
         },
         "thankYou": {
-            "title": "Thank You",
-            "description": "We would like to express our heartfelt gratitude to everyone who attended and blessed us on this special day."
+            "title": "Bride Procession",
+            "description": "It's time to 'bring the bride home' — the couple and their families carry out the procession, officially joining as one family."
         }
     },
-
     "Moments": {
-        "title": "Memories & Moments",
-        "description": "A collection of cherished memories and unforgettable moments from our journey together."
+        "title": "MOMENTS",
+        "description": "A collection of precious memories and unforgettable moments from our journey."
     }
 }

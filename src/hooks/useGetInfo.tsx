@@ -13,7 +13,7 @@ const useGetInfo = (codeFromUrl: string) => {
             return apiResponse;
         },
         onError: (err) => {
-            throw err || "Lỗi khi tải lời chúc!";
+            throw err || "Lỗi khi tải thông tin User!";
         },
     });
 
@@ -22,7 +22,7 @@ const useGetInfo = (codeFromUrl: string) => {
             const response = await getInfo.mutateAsync();
             setUserInfo(response || null);
         } catch (error) {
-            console.error("Lỗi khi tải lời chúc:", error);
+            console.error("Lỗi khi tải thông tin User", error);
         }
     };
 

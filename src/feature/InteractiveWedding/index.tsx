@@ -1,6 +1,7 @@
 "use client";
 
 import stuccoBg from "@/assets/stucod.png";
+import { useEffect, useRef, useState } from "react";
 import { TextureOverlay } from "./ui";
 import { CardCover } from "./CardCover";
 import { CardMain } from "./CardMain";
@@ -21,7 +22,16 @@ export default function InteractiveWeddingCard({
     name,
     checkLocation,
 }: ModalProps) {
-    const { step, advance } = useWeddingCard(isOpen, onClose);
+    const [isBlessingOpen, setIsBlessingOpen] = useState(false);
+    const isBlessingOpenRef = useRef(false);
+    const { step, advance } = useWeddingCard(isOpen, onClose, isBlessingOpen);
+
+    useEffect(() => {
+        if (!isOpen) {
+            isBlessingOpenRef.current = false;
+            setIsBlessingOpen(false);
+        }
+    }, [isOpen]);
 
     if (!isOpen) return null;
 
@@ -30,14 +40,30 @@ export default function InteractiveWeddingCard({
         onClose();
     };
 
+    const shouldIgnoreCardAction = (target: EventTarget | null) =>
+        target instanceof HTMLElement &&
+        Boolean(target.closest("[data-ignore-card-action]"));
+
+    const handleBlessingOpenChange = (nextIsOpen: boolean) => {
+        isBlessingOpenRef.current = nextIsOpen;
+        setIsBlessingOpen(nextIsOpen);
+    };
+
     return (
         <div
             className="fixed inset-0 z-200 flex items-center justify-center bg-black/65 backdrop-blur-sm p-3 sm:p-4 md:p-6 overflow-y-auto"
-            onClick={onClose}
+            onClick={() => {
+                if (isBlessingOpenRef.current) return;
+
+                onClose();
+            }}
         >
             <div
                 onClick={(e) => {
                     e.stopPropagation();
+                    if (isBlessingOpenRef.current) return;
+                    if (shouldIgnoreCardAction(e.target)) return;
+
                     advance();
                 }}
                 className={[
@@ -59,6 +85,7 @@ export default function InteractiveWeddingCard({
                         <CardDetails
                             visible={step === 2}
                             onClose={handleClose}
+                            onBlessingOpenChange={handleBlessingOpenChange}
                             checkLocation={checkLocation}
                         />
                     </div>
