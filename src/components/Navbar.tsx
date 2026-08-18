@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import InteractiveWeddingCard from "@/feature/InteractiveWedding/index";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -8,13 +8,18 @@ import LanguageSwitcher from "@/feature/LanguageSwicher";
 import { useTranslation } from "@/contexts/TranslationContext";
 import useGetInfo from "@/hooks/useGetInfo";
 
+const NAV_SECTION_IDS = ["home", "story", "gallery", "events"];
+
 const Navbar = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
   const codeFromUrl = searchParams.get("code");
+  const lastScrollY = useRef(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCardOpen, setIsCardOpen] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [activeSection, setActiveSection] = useState("home");
   const { lang } = useTranslation();
   const { t } = useTranslation();
   const { userInfo, fetchUserInfo } = useGetInfo(codeFromUrl || "");
@@ -31,6 +36,7 @@ const Navbar = () => {
   ) => {
     e.preventDefault();
     setIsMenuOpen(false);
+    setActiveSection(sectionId);
 
     if (pathname !== "/") {
       router.push(`/#${sectionId}`);
@@ -52,35 +58,41 @@ const Navbar = () => {
 
   const navLinks = [
     {
+      id: "home",
       name: t("navigation.home"),
       href: "#home",
       action: (e: React.MouseEvent<HTMLAnchorElement>) =>
         handleSectionNavigation(e, "home"),
     },
     {
+      id: "story",
       name: t("navigation.Story"),
       href: "#story",
       action: (e: React.MouseEvent<HTMLAnchorElement>) =>
         handleSectionNavigation(e, "story"),
     },
     {
+      id: "gallery",
       name: t("navigation.Gallery"),
       href: "#gallery",
       action: (e: React.MouseEvent<HTMLAnchorElement>) =>
         handleSectionNavigation(e, "gallery"),
     },
     {
+      id: "events",
       name: t("navigation.Events"),
       href: "#events",
       action: (e: React.MouseEvent<HTMLAnchorElement>) =>
         handleSectionNavigation(e, "events"),
     },
     {
+      id: "invitation",
       name: t("navigation.Invitationcard"),
       href: "#",
       action: (e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e),
     },
     {
+      id: "blessings",
       name: t("navigation.Blessings"),
       href: "/blessings",
       action: (e: React.MouseEvent<HTMLAnchorElement>) =>
@@ -100,89 +112,172 @@ const Navbar = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [codeFromUrl]);
 
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection("blessings");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleEntries.length > 0) {
+          const nextSection = visibleEntries[0].target.id;
+          setActiveSection(nextSection);
+        }
+      },
+      {
+        root: null,
+        threshold: [0.2, 0.35, 0.5, 0.7],
+        rootMargin: "-10% 0px -42% 0px",
+      },
+    );
+
+    NAV_SECTION_IDS.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isScrollingUp = currentScrollY < lastScrollY.current;
+      const shouldShow = isScrollingUp || currentScrollY < 40;
+
+      setIsNavVisible(shouldShow);
+      lastScrollY.current = currentScrollY;
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
-      <header className="w-full bg-[#fbf9f4] border-b border-gray-200/50 relative z-50">
-        <nav className="flex justify-between items-center py-4 px-6 md:py-6 lg:px-20 w-full text-[#333]">
-          {/* --- CỤM TRÁI: Nút Menu (Mobile) & 3 Links đầu (Desktop) --- */}
-          <div className="flex-1 flex justify-start items-center">
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-[#52594a] focus:outline-none p-1 transition-transform"
-            >
-              {isMenuOpen ? (
-                <X size={28} strokeWidth={1.5} />
-              ) : (
-                <Menu size={28} strokeWidth={1.5} />
-              )}
-            </button>
-
-            {/* Desktop Links (Left) */}
-            <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-600">
-              {navLinks.slice(0, 3).map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={link.action}
-                  className="hover:text-[#52594a] transition-colors cursor-pointer"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* --- CỤM GIỮA: Logo --- */}
-          <div className="text-2xl md:text-3xl font-serif italic text-[#52594a] text-center shrink-0 px-4 md:px-8">
-            VINH & LINH
-          </div>
-
-          {/* --- CỤM PHẢI: 3 Links sau (Desktop) & Language Switcher --- */}
-          <div className="flex-1 flex justify-end items-center gap-4 md:gap-8">
-            {/* Desktop Links (Right) */}
-            <div className="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gray-600">
-              {navLinks.slice(3).map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={link.action}
-                  className="hover:text-[#52594a] transition-colors cursor-pointer"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-
-            {/* Language Switcher (Hiển thị trên cả Mobile và Desktop ở góc phải) */}
-            <LanguageSwitcher currentLang={lang} />
-          </div>
-        </nav>
-
-        {/* --- MENU DROPDOWN CHO MOBILE --- */}
-        <div
-          className={`md:hidden absolute top-full left-0 w-full bg-[#fbf9f4] shadow-lg transition-all duration-300 ease-in-out border-t border-gray-200/50 ${
-            isMenuOpen
-              ? "max-h-100 opacity-100 py-6"
-              : "max-h-0 opacity-0 overflow-hidden py-0"
-          }`}
-        >
-          <div className="flex flex-col items-center space-y-6 text-sm uppercase tracking-widest text-gray-600">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={link.action}
-                className="hover:text-[#52594a] transition-colors w-full text-center cursor-pointer"
+      <header
+        className={`bg-background fixed inset-x-0 top-0 z-50 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          isNavVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="mx-auto max-w-400 px-3 pt-3 sm:px-5 lg:px-6 bg-background">
+          <nav className="flex items-center justify-between rounded-2xl border border-[#d4b07c]/40 bg-[rgba(251,249,244,0.82)] px-4 py-3 shadow-[0_10px_35px_rgba(41,23,18,0.08)] backdrop-blur-xl ring-1 ring-white/60 transition-all duration-500 md:px-6 md:py-4">
+            <div className="flex flex-1 items-center justify-start">
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="rounded-full border border-[#d4b07c]/50 bg-white/40 p-2 text-[#5b4b3c] transition-all duration-200 hover:border-[#c98d4b] hover:text-[#721527] md:hidden"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               >
-                {link.name}
-              </a>
-            ))}
+                {isMenuOpen ? (
+                  <X size={22} strokeWidth={1.8} />
+                ) : (
+                  <Menu size={22} strokeWidth={1.8} />
+                )}
+              </button>
+
+              <div className="hidden items-center gap-2 md:flex">
+                {navLinks.slice(0, 3).map((link) => {
+                  const isActiveItem =
+                    pathname === "/" ? activeSection === link.id : pathname === "/blessings" && link.id === "blessings";
+
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      onClick={link.action}
+                      aria-current={isActiveItem ? "page" : undefined}
+                      className={`relative inline-flex items-center rounded-full px-3 py-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
+                        isActiveItem
+                          ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
+                          : "text-[#5d4d3a] hover:bg-[#f4e9dd] hover:text-[#721527]"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="shrink-0 px-3 text-center md:px-6">
+              <div className="font-serif text-xl italic tracking-[0.18em] text-[#5d4d3a] md:text-2xl">
+                VINH &amp; LINH
+              </div>
+            </div>
+
+            <div className="flex flex-1 items-center justify-end gap-3 md:gap-4">
+              <div className="hidden items-center gap-2 md:flex">
+                {navLinks.slice(3).map((link) => {
+                  const isActiveItem =
+                    pathname === "/" ? activeSection === link.id : pathname === "/blessings" && link.id === "blessings";
+
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      onClick={link.action}
+                      aria-current={isActiveItem ? "page" : undefined}
+                      className={`relative inline-flex items-center rounded-full px-3 py-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
+                        isActiveItem
+                          ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
+                          : "text-[#5d4d3a] hover:bg-[#f4e9dd] hover:text-[#721527]"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  );
+                })}
+              </div>
+
+              <div className="flex items-center justify-end">
+                <LanguageSwitcher currentLang={lang} />
+              </div>
+            </div>
+          </nav>
+
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+              isMenuOpen ? "mt-3 max-h-112 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="rounded-[1.3rem] border border-[#d4b07c]/40 bg-[rgba(251,249,244,0.96)] p-3 shadow-[0_12px_25px_rgba(41,23,18,0.08)] backdrop-blur-xl">
+              <div className="flex flex-col gap-2">
+                {navLinks.map((link) => {
+                  const isActiveItem =
+                    pathname === "/" ? activeSection === link.id : pathname === "/blessings" && link.id === "blessings";
+
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      onClick={link.action}
+                      aria-current={isActiveItem ? "page" : undefined}
+                      className={`rounded-2xl px-4 py-3 text-center text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
+                        isActiveItem
+                          ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
+                          : "bg-[#f6efe7] text-[#5d4d3a] hover:bg-[#f2e3c9] hover:text-[#721527]"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* NHÚNG MODAL THIỆP CƯỚI VÀO ĐÂY */}
+      <div className="h-24 md:h-28" aria-hidden="true" />
+
       <InteractiveWeddingCard
         isOpen={isCardOpen}
         onClose={() => setIsCardOpen(false)}

@@ -16,14 +16,22 @@
 }
 
 :root {
-  --background: #E7E7E7;
+  --background: #ffffff;
   --foreground: #000000;
   --card: #f9fafb;
   --border: #e5e7eb;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
 .dark {
-  --background: #0b0118;
+  --background: #fbf9f4;
   --foreground: #ffffff;
   --card: #140326;
   --border: rgba(255, 255, 255, 0.06);

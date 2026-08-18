@@ -22,7 +22,7 @@ export default async function RootLayout({
         LANG_MAP[DEFAULT_LANG]) as Translations;
     return (
         <html lang={lang} suppressHydrationWarning>
-            <body>
+            <body className="bg-background text-foreground w-full min-h-screen">
                 <AnimatedTabTitle />
                 <Providers>
                     <ThemeProvider
