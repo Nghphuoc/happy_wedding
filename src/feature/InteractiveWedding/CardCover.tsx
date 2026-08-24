@@ -45,27 +45,27 @@ export function CardCover({ textureSrc, visible, checkLocation }: CardCoverProps
 
                 {checkLocation ? (
                     <>
-                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
-                        {groomName} 
-                    </h4>
+                        <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                            {groomName}
+                        </h4>
 
-                        <span className=" relative z-10 text-lg text-[#dca54c] tracking-wider italic">&</span>
+                        <span className={`text-3xl italic text-[#dca54c] ${playfair.className}`}>&</span>
 
-                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                        <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
                             {brideName}
-                    </h4>
+                        </h4>
                     </>
                 ) : (
                     <>
-                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
-                        {brideName} 
-                    </h4>
+                        <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                            {brideName}
+                        </h4>
 
-                        <span className=" relative z-10 text-lg text-[#dca54c] tracking-wider italic">&</span>
+                        <span className={`text-3xl italic text-[#dca54c] ${playfair.className}`}>&</span>
 
-                    <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
+                        <h4 className={`relative z-10 text-xl text-[#dca54c] tracking-wider mb-1 ${playfair.className}`}>
                             {groomName}
-                    </h4>
+                        </h4>
                     </>
 
                 )}

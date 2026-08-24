@@ -7,7 +7,6 @@ export const WEDDING = {
     address_male: "Số 318-A, Kinh 10A, Tân Hiệp, An Giang.",
     address_female: "Số 185, Kinh A2, Tân Phát B, Tân Hội, An Giang.",
     timeline: [
-        { time: "9:00", label: "Lễ Cưới" },
         { time: "10:30", label: "Đón khách" },
         { time: "11:00", label: "Tiệc Trưa" },
     ],

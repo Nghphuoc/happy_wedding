@@ -170,10 +170,10 @@ const SendBlessing = ({ isOpen, onClose }: SendBlessingProps) => {
               reduceMotion
                 ? false
                 : {
-                    opacity: 0,
-                    y: 28,
-                    scale: 0.97,
-                  }
+                  opacity: 0,
+                  y: 28,
+                  scale: 0.97,
+                }
             }
             animate={{
               opacity: 1,
@@ -184,10 +184,10 @@ const SendBlessing = ({ isOpen, onClose }: SendBlessingProps) => {
               reduceMotion
                 ? undefined
                 : {
-                    opacity: 0,
-                    y: 18,
-                    scale: 0.98,
-                  }
+                  opacity: 0,
+                  y: 18,
+                  scale: 0.98,
+                }
             }
             transition={{
               duration: 0.45,
@@ -236,11 +236,10 @@ const SendBlessing = ({ isOpen, onClose }: SendBlessingProps) => {
                       defaultValue={codeFromUrl ?? ""}
                       autoComplete="off"
                       placeholder="Ví dụ: QV-DL-001"
-                      className={`${fieldClassName} pr-11 uppercase ${
-                        codeFromUrl
-                          ? "cursor-default bg-[#f4ede4]/80"
-                          : ""
-                      }`}
+                      className={`${fieldClassName} pr-11 uppercase ${codeFromUrl
+                        ? "cursor-default bg-[#f4ede4]/80"
+                        : ""
+                        }`}
                     />
 
                     {codeFromUrl && (
@@ -298,7 +297,7 @@ const SendBlessing = ({ isOpen, onClose }: SendBlessingProps) => {
                     required
                     rows={4}
                     maxLength={500}
-                    placeholder="Hãy gửi một lời chúc yêu thương đến Quang Vinh và Diễm Linh..."
+                    placeholder="Hãy gửi những lời chúc yêu thương đến Quang Vinh và Diễm Linh..."
                     className={`${fieldClassName} min-h-32 resize-none leading-7`}
                   />
                 </FormField>
@@ -347,7 +346,7 @@ const SendBlessing = ({ isOpen, onClose }: SendBlessingProps) => {
 
                 <p className="flex items-center justify-center gap-2 text-center text-[11px] leading-5 text-[#8c7779] sm:text-xs">
                   <Heart className="size-3.5 fill-[#721527]/10 text-[#721527]" />
-                  Phản hồi của bạn là một phần ý nghĩa trong ngày trọng đại.
+                  Những lời chúc của bạn là một phần ý nghĩa trong ngày trọng đại của chúng mình.
                 </p>
               </form>
             </div>
@@ -388,8 +387,7 @@ const FormHeader = () => (
       id="blessing-form-description"
       className="text-sm leading-6 text-[#796668] sm:text-base"
     >
-      Sự hiện diện và lời chúc của bạn sẽ làm ngày vui của chúng mình thêm
-      trọn vẹn.
+      Sự hiện diện và lời chúc phúc từ bạn sẽ giúp ngày trọng đại của chúng mình thêm phần trọn vẹn.
     </p>
 
     <p className="mt-2 text-xs font-medium italic text-[#9a671d] sm:text-sm">
@@ -506,18 +504,16 @@ const StatusMessage = ({ variant, children }: StatusMessageProps) => {
       role={isSuccess ? "status" : "alert"}
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`flex items-start gap-3 rounded-xl border px-4 py-3 text-sm ${
-        isSuccess
-          ? "border-[#c5b078]/40 bg-[#f7f1df] text-[#67531f]"
-          : "border-[#c99198]/45 bg-[#fff1f2] text-[#8b2635]"
-      }`}
+      className={`flex items-start gap-3 rounded-xl border px-4 py-3 text-sm ${isSuccess
+        ? "border-[#c5b078]/40 bg-[#f7f1df] text-[#67531f]"
+        : "border-[#c99198]/45 bg-[#fff1f2] text-[#8b2635]"
+        }`}
     >
       <span
-        className={`mt-0.5 grid size-5 shrink-0 place-items-center rounded-full ${
-          isSuccess
-            ? "bg-[#9a671d] text-white"
-            : "bg-[#8b2635] text-white"
-        }`}
+        className={`mt-0.5 grid size-5 shrink-0 place-items-center rounded-full ${isSuccess
+          ? "bg-[#9a671d] text-white"
+          : "bg-[#8b2635] text-white"
+          }`}
       >
         {isSuccess ? (
           <Check className="size-3" />

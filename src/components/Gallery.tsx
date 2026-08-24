@@ -30,38 +30,38 @@ interface GalleryItem {
 const GALLERY_ITEMS: GalleryItem[] = [
   {
     src: singleDad,
-    alt: "Waiting for You",
-    caption: "Waiting for You",
+    alt: "waiting for You",
+    caption: "waiting for You",
     rotation: "-rotate-2",
   },
   {
     src: goodGirl,
-    alt: "On My Way",
-    caption: "On My Way",
+    alt: "on my way",
+    caption: "on my way",
     rotation: "rotate-1",
   },
   {
     src: walk,
-    alt: "Take My Hand ",
-    caption: "Take My Hand",
+    alt: "take my Hand ",
+    caption: "take my hand",
     rotation: "-rotate-1",
   },
   {
     src: blackCouple,
     alt: "Wedding stationery with a wax seal",
-    caption: "Written with love",
+    caption: "written with love",
     rotation: "rotate-2",
   },
   {
     src: danceSingInTheDark,
     alt: "By Your Side",
-    caption: "By Your Side",
+    caption: "by Your side",
     rotation: "-rotate-2",
   },
   {
     src: kiss,
-    alt: "Always Us",
-    caption: "Always Us",
+    alt: "always us",
+    caption: "always us",
     rotation: "-rotate-2",
   },
 ];

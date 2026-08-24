@@ -1,11 +1,11 @@
 {
     "mainTitle": "CHÚNG MÌNH SẮP VỀ CHUNG MỘT NHÀ ",
-    "description": "Một hành trình đã đi qua những tháng năm đẹp nhất, để hôm nay bắt đầu một chương mới mang tên “\nchúng ta\n”. Sẽ thật hạnh phúc khi khoảnh khắc ấy được sẻ chia và lưu giữ cùng nhau. ",
+    "description": "Một hành trình đã cùng nhau đi qua những tháng năm đẹp nhất, để hôm nay mở ra một chương mới mang tên “Chúng Ta”. Sẽ thật trọn vẹn và hạnh phúc khi khoảnh khắc thiêng liêng ấy có sự hiện diện, chúc phúc từ bạn.",
     "sendMessages": "Gửi Lời Chúc",
     "mailNotification": "Bạn có 1 thiệp mời chưa xem! 🎉",
     "ourStory": {
         "title": "TỪ NGÀY ẤY ĐẾN HÔM NAY",
-        "description": "Chẳng nhớ từ lúc nào, hai đứa cứ thế có mặt trong những năm tháng của nhau.",
+        "description": "Chẳng nhớ từ lúc nào, hai đứa cứ thế có mặt trong cuộc đời của nhau.",
 
         "story1": {
             "title": "MỌI CHUYỆN BẮT ĐẦU TỪ…",
@@ -16,11 +16,11 @@
 
         "story2": {
             "title": "Chuyện Chưa Kể",
-            "content": "Mẹ Linh từng kể, vào một buổi chiều nọ, có một thanh niên cưỡi chiếc Sirius \"cà tàng\"  cứ lượn lờ, đánh võng mấy vòng trước cổng. Mẹ thấy khả nghi quá mới quay sang hỏi: ",
-            "subContent": "Ủa Linh, thằng nào đi chiếc Sirius, da thì ngăm ngăm, tóc thì xoăn tít như mì tôm mà cứ dòm ngó nhà mình như đi đòi nợ vậy con?",
+            "content": "Mẹ Linh từng kể, vào một buổi chiều nọ, có anh thanh niên cưỡi chiếc Sirius \"cà tàng\" cứ lượn lờ, đánh võng mấy vòng trước cổng. Mẹ thấy khả nghi quá mới quay sang hỏi:",
+            "subContent": "“Ủa Linh, thằng nào đi chiếc Sirius, da thì đen đen, tóc thì xoăn tít như mì tôm mà cứ dòm ngó nhà mình như đi đòi nợ vậy con?”.",
             "subContent2": "Nghe xong, Linh bĩu môi chê ỏng chê eo, dõng dạc tuyên bố: ",
-            "subContent3": "À, cái thằng Vinh học cùng trường đó mẹ. Trông cái mặt ghét dễ sợ, có cho vàng con cũng không thèm!",
-            "subContent4": ". Thế nhưng Linh đâu biết rằng, thanh niên \"tóc xoăn đòi nợ\" hôm ấy lượn lờ với mục đích vô cùng rõ ràng: cưa đổ bằng được con gái cưng của mẹ.",
+            "subContent3": "À, cái thằng Vinh học cùng ở lớp học thêm đó mẹ. Trông cái mặt ghét dễ sợ, có cho vàng con cũng không thèm!",
+            "subContent4": "Thế nhưng Linh đâu biết rằng, thanh niên \"tóc xoăn đòi nợ\" hôm ấy lượn lờ với mục đích vô cùng rõ ràng: Cưa đổ bằng được con gái cưng của mẹ.",
             "subContent5": "Đúng là ông bà ta nói cấm có sai: \"Ghét của nào  trời trao của đó\". Mà ở đây là trời ép nhận luôn nguyên combo \"cái mặt thấy ghét, đen đen, xoăn xoăn\"!"
         },
 
