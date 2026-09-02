@@ -18,6 +18,7 @@ import {
   type Variants,
 } from "motion/react";
 import Image from "next/image";
+import { useMemo } from "react";
 
 
 /* -------------------------------------------------------------------------- */
@@ -225,11 +226,7 @@ const EventImage = ({
   </motion.div>
 );
 
-const EventTimeline = ({
-  events,
-}: {
-  events: EventItem[];
-}) => (
+const EventTimeline = ({ events }: { events: EventItem[] }) => (
   <motion.ol
     variants={containerVariants}
     initial="hidden"
@@ -245,7 +242,7 @@ const EventTimeline = ({
 
     {events.map((event, index) => (
       <EventTimelineItem
-        key={`${event.title}-${index}`}
+        key={event.title}
         event={event}
         index={index}
       />
@@ -329,47 +326,53 @@ const BackgroundDecorations = () => (
 /* -------------------------------------------------------------------------- */
 /*                                    Events                                  */
 /* -------------------------------------------------------------------------- */
-
 export default function Events() {
   const { t } = useTranslation();
   const reduceMotion = useReducedMotion() ?? false;
   const { globalUserInfo } = useUser();
 
-  const isCheckTrue = globalUserInfo?.data?.CHECK === true;
+  const events = useMemo(() => {
+    const defaultEvents: EventItem[] = [
+      {
+        title: t("events.Photography.title"),
+        description: t("events.Photography.description"),
+        icon: Sparkles,
+      },
+      {
+        title: t("events.Ceremony.title"),
+        description: t("events.Ceremony.description"),
+        icon: Heart,
+      },
+      {
+        title: t("events.Drink & Dinner.title"),
+        description: t("events.Drink & Dinner.description"),
+        icon: Wine,
+      },
+      {
+        title: t("events.thankYou.title"),
+        description: t("events.thankYou.description"),
+        icon: HouseHeart,
+      },
+    ];
 
-  // 1. Khởi tạo mảng events với thứ tự mặc định (1, 2, 3, 4)
-  const events: EventItem[] = [
-    {
-      title: t("events.Photography.title"),
-      description: t("events.Photography.description"),
-      icon: Sparkles,
-    },
-    {
-      title: t("events.Ceremony.title"),
-      description: t("events.Ceremony.description"),
-      icon: Heart,
-    },
-    {
-      title: t("events.Drink & Dinner.title"),
-      description: t("events.Drink & Dinner.description"),
-      icon: Wine,
-    },
-    {
-      title: t("events.thankYou.title"),
-      description: t("events.thankYou.description"),
-      icon: HouseHeart,
-    },
-  ];
+    // SỬA: Bọc thêm trường hợp API trả về dạng String "true" (rất hay xảy ra)
+    const isCheckTrue =
+      globalUserInfo?.data?.CHECK === true;
 
-  if (isCheckTrue) {
-    const temp = events[0];
-    events[0] = events[1];
-    events[1] = temp;
+    if (isCheckTrue) {
+      // Đổi chỗ 1 và 2 (Index 0 và 1)
+      const temp1 = defaultEvents[0];
+      defaultEvents[0] = defaultEvents[1];
+      defaultEvents[1] = temp1;
 
-    const temp2 = events[2];
-    events[2] = events[3];
-    events[3] = temp2;
-  }
+      // Đổi chỗ 3 và 4 (Index 2 và 3)
+      const temp2 = defaultEvents[2];
+      defaultEvents[2] = defaultEvents[3];
+      defaultEvents[3] = temp2;
+    }
+
+    return defaultEvents;
+  }, [t, globalUserInfo]);
 
   return (
     <section
