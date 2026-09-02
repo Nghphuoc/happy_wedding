@@ -365,6 +365,10 @@ export default function Events() {
     const temp = events[0];
     events[0] = events[1];
     events[1] = temp;
+
+    const temp2 = events[2];
+    events[2] = events[3];
+    events[3] = temp2;
   }
 
   return (
