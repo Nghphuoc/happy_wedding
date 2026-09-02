@@ -1,10 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Couple from "@/assets/countDown.jpg";
 import Rose from "@/assets/rose.png";
 import Image from "next/image";
 import { playfair } from "@/utils/Fonts";
+import { useUser } from "@/providers/UserProvider";
 
 interface TimeLeft {
   days: number;
@@ -14,10 +15,19 @@ interface TimeLeft {
 }
 
 const Countdown = () => {
-  // TODO: Cần chỉnh lại ngày giờ cho đúng với ngày cưới của mình nhé
-  const targetDate = new Date("2026-10-03T10:30:00");
+  const { globalUserInfo } = useUser();
 
-  const calculateTimeLeft = (): TimeLeft => {
+  const targetDate = useMemo(() => {
+    const date = new Date("2026-10-03T10:30:00");
+    const isCheckTrue = globalUserInfo?.data?.CHECK === true;
+
+    if (isCheckTrue) {
+      date.setDate(date.getDate() + 1);
+    }
+    return date;
+  }, [globalUserInfo]);
+
+  const calculateTimeLeft = useCallback((): TimeLeft => {
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 
@@ -33,29 +43,26 @@ const Countdown = () => {
     }
 
     return timeLeft;
-  };
+  }, [targetDate]);
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const mountTimer = window.setTimeout(() => {
-      setIsMounted(true);
-    }, 0);
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    setTimeLeft(calculateTimeLeft());
 
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    return () => {
-      clearTimeout(mountTimer);
-      clearInterval(timer);
-    };
-  }, []);
+    return () => clearInterval(timer);
+  }, [calculateTimeLeft]);
 
-  if (!isMounted) {
-    return null;
-  }
+  if (!isMounted) return null;
 
   return (
     <section className="py-8 md:py-12 lg:py-16 bg-[#fcf9f3] flex justify-center items-center overflow-hidden">
@@ -96,7 +103,7 @@ const Countdown = () => {
           <div className={`flex items-center gap-4 md:gap-6 mb-8 md:mb-10 text-center lg:text-left ${playfair.className}`}>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-[#4a3f3a]">
               QUANG VINH
-                &amp;
+              &amp;
               DIỄM LINH
             </h2>
           </div>

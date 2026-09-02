@@ -53,7 +53,7 @@ export const StoryContent = ({
     >
       <span className="h-px w-10 bg-[#dca54c]/70" />
       <Heart className="size-4 fill-[#721527]/10 text-[#721527]" />
-      <span className="h-px w-20 bg-linear-to-r from-[#dca54c]/70 to-transparent" />
+      <span className="h-px w-10 bg-[#dca54c]/70" />
     </motion.div>
 
     <motion.p

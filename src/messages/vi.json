@@ -6,30 +6,26 @@
     "ourStory": {
         "title": "TỪ NGÀY ẤY ĐẾN HÔM NAY",
         "description": "Chẳng nhớ từ lúc nào, hai đứa cứ thế có mặt trong cuộc đời của nhau.",
-
         "story1": {
             "title": "MỌI CHUYỆN BẮT ĐẦU TỪ…",
             "content": "Chúng mình gặp nhau hồi cấp 3, trong một lớp học thêm Toán. Ban đầu, hai đứa chỉ định đến để tìm x, ai ngờ Vinh vừa nhìn thấy Linh đã tìm được luôn “đáp án của đời mình”.",
             "subContent": "Từ hai cô cậu học trò từng đau đầu vì phương trình, chúng mình đã cùng nhau vượt qua nhiều “bài toán khó” của cuộc sống. Sau một thập kỷ, Vinh quyết định đưa ra đáp án cuối cùng bằng một lời cầu hôn. Linh đồng ý, bởi sau ngần ấy năm, hai đứa đều hiểu rằng: ",
             "highlight": "\"Toán có thể sai, nhưng chọn nhau thì chắc chắn đúng.\""
         },
-
         "story2": {
             "title": "Chuyện Chưa Kể",
             "content": "Mẹ Linh từng kể, vào một buổi chiều nọ, có anh thanh niên cưỡi chiếc Sirius \"cà tàng\" cứ lượn lờ, đánh võng mấy vòng trước cổng. Mẹ thấy khả nghi quá mới quay sang hỏi:",
             "subContent": "“Ủa Linh, thằng nào đi chiếc Sirius, da thì đen đen, tóc thì xoăn tít như mì tôm mà cứ dòm ngó nhà mình như đi đòi nợ vậy con?”.",
             "subContent2": "Nghe xong, Linh bĩu môi chê ỏng chê eo, dõng dạc tuyên bố: ",
-            "subContent3": "À, cái thằng Vinh học cùng ở lớp học thêm đó mẹ. Trông cái mặt ghét dễ sợ, có cho vàng con cũng không thèm!",
+            "subContent3": "“À, cái thằng Vinh học cùng ở lớp học thêm đó mẹ. Trông cái mặt ghét dễ sợ, có cho vàng con cũng không thèm!”",
             "subContent4": "Thế nhưng Linh đâu biết rằng, thanh niên \"tóc xoăn đòi nợ\" hôm ấy lượn lờ với mục đích vô cùng rõ ràng: Cưa đổ bằng được con gái cưng của mẹ.",
             "subContent5": "Đúng là ông bà ta nói cấm có sai: \"Ghét của nào  trời trao của đó\". Mà ở đây là trời ép nhận luôn nguyên combo \"cái mặt thấy ghét, đen đen, xoăn xoăn\"!"
         },
-
         "card": {
             "title": "Đi cùng nhau thật lâu có lẽ là điều đẹp nhất mà hai đứa đã làm được.",
             "content": "Đến hôm nay, mỗi chặng đường đều đáng nhớ vì luôn có nhau đồng hành."
         }
     },
-
     "navigation": {
         "home": "Trang chủ",
         "Story": "Câu chuyện",
@@ -38,7 +34,6 @@
         "Invitationcard": "Thiệp mời",
         "Blessings": "Lời chúc"
     },
-
     "events": {
         "title": "Sự kiện & Lễ cưới",
         "Photography": {
@@ -55,10 +50,9 @@
         },
         "thankYou": {
             "title": "Lễ rước dâu",
-            "description": "Đến giờ “đón nàng về dinh” - Cô dâu chú rể cùng gia đình thực hiện nghi thức rước dâu, chính thức về chung một nhà."
+            "description": "Đến giờ “Rước nàng về dinh” - Cô dâu chú rể cùng gia đình thực hiện nghi thức rước dâu, chính thức về chung một nhà."
         }
     },
-
     "Moments": {
         "title": "DẤU ẤN",
         "description": "Một bộ sưu tập những kỷ niệm quý giá và những khoảnh khắc không thể quên từ hành trình của chúng tôi."

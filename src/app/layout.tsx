@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/libs/ThemeProvider";
 import Providers from "@/providers/Provider";
 import Navbar from "@/components/Navbar";
 import AnimatedTabTitle from "@/components/AnimatedTabTitle";
+import { UserProvider } from "@/providers/UserProvider";
 
 export default async function RootLayout({
     children,
@@ -36,8 +37,10 @@ export default async function RootLayout({
                                 lang={lang}
                                 translations={translations}
                             >
-                                <Navbar />
-                                {children}
+                                <UserProvider>
+                                    <Navbar />
+                                    {children}
+                                </UserProvider>
                             </TranslationProvider>
                         </div>
                     </ThemeProvider>

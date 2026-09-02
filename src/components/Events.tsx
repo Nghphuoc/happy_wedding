@@ -2,6 +2,7 @@
 
 import muoi from "@/assets/muoi.jpg";
 import { useTranslation } from "@/contexts/TranslationContext";
+import { useUser } from "@/providers/UserProvider";
 import { montserrat, playfair } from "@/utils/Fonts";
 import {
   Flower2,
@@ -128,10 +129,10 @@ const EventImage = ({
       reduceMotion
         ? false
         : {
-            opacity: 0,
-            x: -36,
-            rotate: -2,
-          }
+          opacity: 0,
+          x: -36,
+          rotate: -2,
+        }
     }
     whileInView={{
       opacity: 1,
@@ -171,9 +172,9 @@ const EventImage = ({
         reduceMotion
           ? undefined
           : {
-              y: -7,
-              rotate: -0.8,
-            }
+            y: -7,
+            rotate: -0.8,
+          }
       }
       transition={{
         duration: 0.4,
@@ -332,7 +333,11 @@ const BackgroundDecorations = () => (
 export default function Events() {
   const { t } = useTranslation();
   const reduceMotion = useReducedMotion() ?? false;
+  const { globalUserInfo } = useUser();
 
+  const isCheckTrue = globalUserInfo?.data?.CHECK === true;
+
+  // 1. Khởi tạo mảng events với thứ tự mặc định (1, 2, 3, 4)
   const events: EventItem[] = [
     {
       title: t("events.Photography.title"),
@@ -355,6 +360,12 @@ export default function Events() {
       icon: HouseHeart,
     },
   ];
+
+  if (isCheckTrue) {
+    const temp = events[0];
+    events[0] = events[1];
+    events[1] = temp;
+  }
 
   return (
     <section

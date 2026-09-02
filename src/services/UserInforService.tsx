@@ -12,7 +12,7 @@ export interface infoUserResult {
         CHECK: boolean;
         NOTE: string;
     };
-}
+};
 
 export const getUserInfo = async (codeFromUrl: string) => {
     const response = await fetch(

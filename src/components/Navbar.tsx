@@ -7,6 +7,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import LanguageSwitcher from "@/feature/LanguageSwicher";
 import { useTranslation } from "@/contexts/TranslationContext";
 import useGetInfo from "@/hooks/useGetInfo";
+import { useUser } from "@/providers/UserProvider";
 
 const NAV_SECTION_IDS = ["home", "story", "gallery", "events"];
 
@@ -23,6 +24,8 @@ const Navbar = () => {
   const { lang } = useTranslation();
   const { t } = useTranslation();
   const { userInfo, fetchUserInfo } = useGetInfo(codeFromUrl || "");
+  // setGlobalUserInfo từ Context
+  const { setGlobalUserInfo } = useUser();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -103,14 +106,21 @@ const Navbar = () => {
   useEffect(() => {
     if (codeFromUrl) {
       fetchUserInfo();
-      if (userInfo) {
-        setTimeout(() => {
-          setIsCardOpen(true);
-        }, 5000);
-      }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [codeFromUrl]);
+
+  useEffect(() => {
+    if (userInfo) {
+      // Save to global state
+      setGlobalUserInfo(userInfo);
+
+      // Logic to open the card after 5 seconds
+      const timer = setTimeout(() => {
+        setIsCardOpen(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [userInfo, setGlobalUserInfo]);
 
   useEffect(() => {
     if (pathname !== "/") {
@@ -163,9 +173,8 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`bg-background fixed inset-x-0 top-0 z-50 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          isNavVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`bg-background fixed inset-x-0 top-0 z-50 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isNavVisible ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         <div className="mx-auto max-w-400 px-3 pt-3 sm:px-5 lg:px-6 bg-background">
           <nav className="flex items-center justify-between rounded-2xl border border-[#d4b07c]/40 bg-[rgba(251,249,244,0.82)] px-4 py-3 shadow-[0_10px_35px_rgba(41,23,18,0.08)] backdrop-blur-xl ring-1 ring-white/60 transition-all duration-500 md:px-6 md:py-4">
@@ -194,11 +203,10 @@ const Navbar = () => {
                       href={link.href}
                       onClick={link.action}
                       aria-current={isActiveItem ? "page" : undefined}
-                      className={`relative inline-flex items-center rounded-full px-3 py-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
-                        isActiveItem
-                          ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
-                          : "text-[#5d4d3a] hover:bg-[#f4e9dd] hover:text-[#721527]"
-                      }`}
+                      className={`relative inline-flex items-center rounded-full px-3 py-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${isActiveItem
+                        ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
+                        : "text-[#5d4d3a] hover:bg-[#f4e9dd] hover:text-[#721527]"
+                        }`}
                     >
                       {link.name}
                     </a>
@@ -225,11 +233,10 @@ const Navbar = () => {
                       href={link.href}
                       onClick={link.action}
                       aria-current={isActiveItem ? "page" : undefined}
-                      className={`relative inline-flex items-center rounded-full px-3 py-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
-                        isActiveItem
-                          ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
-                          : "text-[#5d4d3a] hover:bg-[#f4e9dd] hover:text-[#721527]"
-                      }`}
+                      className={`relative inline-flex items-center rounded-full px-3 py-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${isActiveItem
+                        ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
+                        : "text-[#5d4d3a] hover:bg-[#f4e9dd] hover:text-[#721527]"
+                        }`}
                     >
                       {link.name}
                     </a>
@@ -244,9 +251,8 @@ const Navbar = () => {
           </nav>
 
           <div
-            className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-              isMenuOpen ? "mt-3 max-h-112 opacity-100" : "max-h-0 opacity-0"
-            }`}
+            className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${isMenuOpen ? "mt-3 max-h-112 opacity-100" : "max-h-0 opacity-0"
+              }`}
           >
             <div className="rounded-[1.3rem] border border-[#d4b07c]/40 bg-[rgba(251,249,244,0.96)] p-3 shadow-[0_12px_25px_rgba(41,23,18,0.08)] backdrop-blur-xl">
               <div className="flex flex-col gap-2">
@@ -260,11 +266,10 @@ const Navbar = () => {
                       href={link.href}
                       onClick={link.action}
                       aria-current={isActiveItem ? "page" : undefined}
-                      className={`rounded-2xl px-4 py-3 text-center text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${
-                        isActiveItem
-                          ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
-                          : "bg-[#f6efe7] text-[#5d4d3a] hover:bg-[#f2e3c9] hover:text-[#721527]"
-                      }`}
+                      className={`rounded-2xl px-4 py-3 text-center text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-all duration-300 ${isActiveItem
+                        ? "bg-[#721527] text-[#fffaf2] shadow-[0_10px_25px_rgba(114,21,39,0.22)]"
+                        : "bg-[#f6efe7] text-[#5d4d3a] hover:bg-[#f2e3c9] hover:text-[#721527]"
+                        }`}
                     >
                       {link.name}
                     </a>

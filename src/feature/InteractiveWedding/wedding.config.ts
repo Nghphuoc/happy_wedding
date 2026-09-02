@@ -3,7 +3,7 @@ export const WEDDING = {
     brideName: "Nguyễn Ngọc Diễm Linh",
     date_female: { day: "03", month: "10", year: "2026", weekday: "Thứ Bảy" },
     date_male: { day: "04", month: "10", year: "2026", weekday: "Chủ Nhật" },
-    venue: "Tiệc Cưới Sẽ Được Tổ Chức Tại Tự Gia",
+    venue: "Tiệc Cưới Sẽ Được Tổ Chức Tại Tư Gia",
     address_male: "Số 318-A, Kinh 10A, Tân Hiệp, An Giang.",
     address_female: "Số 185, Kinh A2, Tân Phát B, Tân Hội, An Giang.",
     timeline: [

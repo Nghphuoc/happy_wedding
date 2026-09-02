@@ -346,7 +346,7 @@ const SendBlessing = ({ isOpen, onClose }: SendBlessingProps) => {
 
                 <p className="flex items-center justify-center gap-2 text-center text-[11px] leading-5 text-[#8c7779] sm:text-xs">
                   <Heart className="size-3.5 fill-[#721527]/10 text-[#721527]" />
-                  Những lời chúc của bạn là một phần ý nghĩa trong ngày trọng đại của chúng mình.
+                  Cảm ơn bạn đã dành thời gian phản hồi và gửi gắm yêu thương đến chúng mình.
                 </p>
               </form>
             </div>
@@ -391,7 +391,7 @@ const FormHeader = () => (
     </p>
 
     <p className="mt-2 text-xs font-medium italic text-[#9a671d] sm:text-sm">
-      Vui lòng phản hồi trước ngày 20/10/2026
+      Vui lòng phản hồi trước ngày 01/10/2026
     </p>
   </header>
 );

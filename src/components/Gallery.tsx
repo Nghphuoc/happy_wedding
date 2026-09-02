@@ -30,38 +30,38 @@ interface GalleryItem {
 const GALLERY_ITEMS: GalleryItem[] = [
   {
     src: singleDad,
-    alt: "waiting for You",
-    caption: "waiting for You",
+    alt: "Waiting for You",
+    caption: "Waiting for You",
     rotation: "-rotate-2",
   },
   {
     src: goodGirl,
-    alt: "on my way",
-    caption: "on my way",
+    alt: "On my way",
+    caption: "On my way",
     rotation: "rotate-1",
   },
   {
     src: walk,
-    alt: "take my Hand ",
-    caption: "take my hand",
+    alt: "Take my Hand ",
+    caption: "Take my hand ",
     rotation: "-rotate-1",
   },
   {
     src: blackCouple,
     alt: "Wedding stationery with a wax seal",
-    caption: "written with love",
+    caption: "Written with love",
     rotation: "rotate-2",
   },
   {
     src: danceSingInTheDark,
     alt: "By Your Side",
-    caption: "by Your side",
+    caption: "By Your side",
     rotation: "-rotate-2",
   },
   {
     src: kiss,
     alt: "always us",
-    caption: "always us",
+    caption: "Always us",
     rotation: "-rotate-2",
   },
 ];
@@ -245,11 +245,10 @@ const Gallery = () => {
               onClick={() => goToSlide(index)}
               aria-label={`Đi đến ảnh ${index + 1}`}
               aria-current={activeIndex === index}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                activeIndex === index
-                  ? "w-8 bg-[#721527]"
-                  : "w-2 bg-[#dca54c]/45 hover:bg-[#dca54c]"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${activeIndex === index
+                ? "w-8 bg-[#721527]"
+                : "w-2 bg-[#dca54c]/45 hover:bg-[#dca54c]"
+                }`}
             />
           ))}
         </div>
