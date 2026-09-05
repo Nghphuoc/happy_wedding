@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Link sharing preview
+
+Open Graph and Twitter Card metadata are generated in `src/app/layout.tsx`.
+Edit `title`, `description`, and the `mainHero` image import there to customize
+sharing previews. The original image is served at a public static URL.
+
+Set `SITE_URL` to your public HTTPS origin on the hosting service for a fixed
+image origin. When unset, the request host is used (HTTP locally, HTTPS otherwise).
+Redeploy after changes. Sharing platforms may cache previous previews.

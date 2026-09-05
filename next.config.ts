@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    // Keep sharing metadata in <head>, including for Zalo crawlers.
+    htmlLimitedBots: /.*/,
     images: {
         remotePatterns: [
             {
