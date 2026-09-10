@@ -92,7 +92,7 @@ const WishCard = ({ data, index = 0 }: WishCardProps) => {
               className="size-4 shrink-0 fill-[#721527]/10 text-[#721527]"
             />
 
-            <h3 className="truncate font-serif text-lg font-semibold text-[#721527] sm:text-xl">
+            <h3 className="truncate text-lg font-semibold text-[#721527] sm:text-xl">
               {data.name}
             </h3>
           </div>
